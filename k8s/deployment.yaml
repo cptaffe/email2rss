@@ -1,0 +1,62 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: gcs-fileserver
+  name: gcs-fileserver
+spec:
+  selector:
+    matchLabels:
+      app: gcs-fileserver
+  template:
+    metadata:
+      labels:
+        app: gcs-fileserver
+    spec:
+      containers:
+      - name: httpd
+        image: us-south1-docker.pkg.dev/homelab-388417/homelab/gcs-fileserver:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+          name: web
+          protocol: TCP
+        livenessProbe:
+          httpGet:
+            path: /healthz
+            port: web
+        readinessProbe:
+          httpGet:
+            path: /healthz
+            port: web
+        volumeMounts:
+        - name: resources
+          readOnly: true
+          mountPath: /home/static
+      - name: gcs-syncer
+        image: gcr.io/google.com/cloudsdktool/google-cloud-cli:alpine
+        command: ["/bin/sh"]
+        args:
+          - "-c"
+          - |
+              gcloud auth activate-service-account --key-file=/var/gcp-creds/creds.json
+              mkdir -p /var/resources/journalclub
+              while true
+              do
+                gsutil -q -m rsync -r gs://connor.zip/journalclub /var/resources/journalclub
+                sleep 300
+              done
+        volumeMounts:
+        - name: gcp-creds
+          readOnly: true
+          mountPath: /var/gcp-creds
+        - name: resources
+          mountPath: /var/resources
+      volumes:
+      - name: gcp-creds
+        secret:
+          secretName: gcp-creds
+      - name: resources
+        emptyDir: {}
+      imagePullSecrets:
+      - name: regcred

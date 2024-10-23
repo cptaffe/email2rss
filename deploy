@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+set -euxo pipefail
+
+tag=$(git rev-parse --short HEAD)
+image="us-south1-docker.pkg.dev/homelab-388417/homelab/gcs-fileserver"
+
+docker buildx build --platform linux/amd64 --progress=plain . --tag "$image:$tag"
+docker tag "$image:$tag" "$image:latest"
+docker push --quiet "$image:$tag"
+docker push --quiet "$image:latest"
+
+yq 'setpath(["spec", "template", "spec", "containers", 0, "image"]; "'"$image:$tag"'")' < k8s/deployment.yaml | kubectl apply -f -

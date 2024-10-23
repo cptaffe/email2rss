@@ -1,0 +1,35 @@
+# Extended version of copy in blog repo
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: blog
+spec:
+  ingressClassName: traefik
+  rules:
+  - host: heavy.computer
+    http:
+      paths:
+      - backend:
+          service:
+            name: blog
+            port:
+              name: web
+        path: /
+        pathType: Prefix
+  - host: connor.zip
+    http:
+      paths:
+      - backend:
+          service:
+            name: gcs-fileserver
+            port:
+              name: web
+        path: /gcs-fileserver/
+        pathType: Prefix
+      - backend:
+          service:
+            name: blog
+            port:
+              name: web
+        path: /
+        pathType: Prefix
