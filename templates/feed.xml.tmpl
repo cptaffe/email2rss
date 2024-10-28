@@ -18,7 +18,7 @@
     {{- range . }}
     <item>
         <title>{{.Subject}}</title>
-        <description>{{.Description}}</description>
+        <description><![CDATA[{{.Description}}]]></description>
         <guid isPermaLink="false">{{.UUID}}</guid>
         <pubDate>{{ rfc2822 .Date }}</pubDate>
         <enclosure

@@ -27,8 +27,8 @@ const (
 
 var (
 	audioRegexp       = regexp.MustCompile(`"(https?://[^ ]+\.mp3)"`)
-	imageRegexp       = regexp.MustCompile(`<img src="(https?:\/\/[^ ]*)"`)
-	descriptionRegexp = regexp.MustCompile(`Hi[ ]+Connor, ([^<]*)<\/p>`)
+	imageRegexp       = regexp.MustCompile(`<img src="(https?://[^ ]*)"`)
+	descriptionRegexp = regexp.MustCompile(`Hi[ ]+Connor, (.*)</p>`)
 )
 
 type Server struct {
