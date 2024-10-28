@@ -79,15 +79,18 @@ func (s *Server) AddEmail(w http.ResponseWriter, req *http.Request) {
 	}
 	key := fmt.Sprintf("%s/items/%s.json", req.PathValue("feed"), date.Format(time.RFC3339))
 
-	exists, err := s.bucket.Exists(ctx, key)
-	if err != nil {
-		http.Error(w, "Check if item exists", http.StatusInternalServerError)
-		log.Printf("check if item exists: %v", err)
-		return
-	}
-	if exists {
-		http.Error(w, "An item already exists for this feed and timestamp", http.StatusConflict)
-		return
+	// ?overwrite disables checking for conflicts
+	if req.URL.Query().Get("overwrite") == "" {
+		exists, err := s.bucket.Exists(ctx, key)
+		if err != nil {
+			http.Error(w, "Check if item exists", http.StatusInternalServerError)
+			log.Printf("check if item exists: %v", err)
+			return
+		}
+		if exists {
+			http.Error(w, "An item already exists for this feed and timestamp", http.StatusConflict)
+			return
+		}
 	}
 
 	item, err := journalclub.FromMessage(msg)
