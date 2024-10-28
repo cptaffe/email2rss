@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: gcs-fileserver
+  name: email2rss
 spec:
   ports:
   - name: web
@@ -9,4 +9,4 @@ spec:
     protocol: TCP
     targetPort: web
   selector:
-    app: gcs-fileserver
+    app: email2rss

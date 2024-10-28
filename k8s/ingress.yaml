@@ -21,10 +21,10 @@ spec:
       paths:
       - backend:
           service:
-            name: gcs-fileserver
+            name: email2rss
             port:
               name: web
-        path: /gcs-fileserver/
+        path: /journalclub/
         pathType: Prefix
       - backend:
           service:

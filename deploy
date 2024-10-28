@@ -2,7 +2,7 @@
 set -euxo pipefail
 
 tag=$(git rev-parse --short HEAD)
-image="us-south1-docker.pkg.dev/homelab-388417/homelab/gcs-fileserver"
+image="us-south1-docker.pkg.dev/homelab-388417/homelab/email2rss"
 
 docker buildx build --platform linux/amd64 --progress=plain . --tag "$image:$tag"
 docker tag "$image:$tag" "$image:latest"

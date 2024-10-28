@@ -1,0 +1,1150 @@
+Return-path: <bounces+46799626-89bb-hello=connor.zip@ckespa.journalclub.io>
+Original-recipient: rfc822;hello@connor.zip
+Received: from p00-icloudmta-smtpin-us-west-3a-60-percent-19 by p27-mailgateway-smtp-698d7585cb-xf287 (mailgateway 2427B47)
+	with SMTP id 4489904c-91ae-4fbf-b4e7-915007267da1 
+	for <hello@connor.zip>; Mon, 21 Oct 2024 12:45:19 GMT
+X-Apple-MoveToFolder: INBOX 
+X-Apple-Action: MOVE_TO_FOLDER/INBOX
+X-Apple-UUID: 4489904c-91ae-4fbf-b4e7-915007267da1
+Received: from o51.ck.n.convertkit.com (o51.ck.n.convertkit.com [159.183.200.47])
+	by p00-icloudmta-smtpin-us-west-3a-60-percent-19.p00-icloudmta-smtpin-vip.icloud-mail-production.svc.kube.us-west-3a.k8s.cloud.apple.com (Postfix) with ESMTPS id C5234C000E7
+	for <hello@connor.zip>; Mon, 21 Oct 2024 12:45:15 +0000 (UTC)
+X-ICL-Info: GAtbRFYDBVFFSlVFSwQEQgYMWxkXXlNCBhAWSkkFD0xEQVVZSgAGTEFORhIcDVQNABcFEgsbAlRCQF9BSgYbWkwbBFoQVVoOGkQFGBZeWRBbAw8HOFNdBwYJB1kSX0MQGxgKFBRFVEwcFkYRHA1cDQALCBYUU1oXF1cPGFhCVV8dHAobF3BVDRsXCQVWSl8SVREDGxcNWVdEVwUcVl4YARoXEBIKRF0LAVcFGBUQRhYHRAlCSR5VCVsXSBQXXkAHBw0NHgweVQ0YWQITRVpZFwcXBxsbXEMAWxAJVxVZUl9JQFQCQUFSB0cdVhEWWEdaBU4JRBsJXhhGDwsTSwNXFTUaCRkOVUQWHhASWhVRXw5HVwUYFQ4=
+X-ICL-Score: 3.3330332342
+Authentication-Results: bimi.icloud.com; bimi=skipped reason="insufficient dmarc"
+X-ARC-Info: policy=fail; arc=none
+Authentication-Results: arc.icloud.com; arc=none
+Authentication-Results: dmarc.icloud.com; dmarc=pass header.from=journalclub.io
+X-DMARC-Policy: v=DMARC1; p=none;
+X-DMARC-Info: pass=pass; dmarc-policy=none; s=r1; d=r1; pdomain=journalclub.io
+Authentication-Results: dkim-verifier.icloud.com;
+	dkim=pass (1024-bit key) header.d=journalclub.io header.i=@journalclub.io header.b=CSql3vML
+Authentication-Results: spf.icloud.com; spf=pass (spf.icloud.com: domain of bounces+46799626-89bb-hello=connor.zip@ckespa.journalclub.io designates 159.183.200.47 as permitted sender) smtp.mailfrom="bounces+46799626-89bb-hello=connor.zip@ckespa.journalclub.io"
+Received-SPF: pass (spf.icloud.com: domain of bounces+46799626-89bb-hello=connor.zip@ckespa.journalclub.io designates 159.183.200.47 as permitted sender) receiver=spf.icloud.com; client-ip=159.183.200.47; helo=o51.ck.n.convertkit.com; envelope-from="bounces+46799626-89bb-hello=connor.zip@ckespa.journalclub.io"
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=journalclub.io;
+	h=content-type:from:mime-version:subject:list-unsubscribe-post:
+	list-unsubscribe:to:cc:content-type:from:subject:to;
+	s=cka; bh=YjD9ZxHA0kAJwR2Gj30J/K7/+ReQmCpkBk5iL9yvqmw=;
+	b=CSql3vMLGMT86Gs8ExFXNz5nVSI1IqoVtyJH4KszIvEdCueNNcrLTEsQQOYSpYiX03NL
+	IEoTknxhgGmU0AUSSZjTt+dszNVEOjQTgAJIFJrzFTKNs73yYHfsNuCt7F7/w9Q92pMDCG
+	oove8i+FUm9785gMWcQR5xJ6hlPg/jbos=
+Received: by recvd-7cc7f7d978-6w7rw with SMTP id recvd-7cc7f7d978-6w7rw-1-67164CD7-C3
+	2024-10-21 12:45:11.943018675 +0000 UTC m=+3350929.021575789
+Received: from NDY3OTk2MjY (unknown)
+	by geopod-ismtpd-6 (SG) with HTTP
+	id G_tfgrg7SaOfYIC3wQF-pQ
+	Mon, 21 Oct 2024 12:45:11.898 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=a9c4115d1397ada69dbc577ff6b0c6a8d20c0ff1f0ebd9d3a8f3bf6054ec
+Date: Mon, 21 Oct 2024 12:45:12 +0000 (UTC)
+From: "JournalClub.io" <members@journalclub.io>
+Mime-Version: 1.0
+Message-ID: <92u9qde2d0fnhq8p7o3c9hz3vmd33aw@convertkit-mail2.com>
+Subject: A Scalable Real-Time SDN-Based MQTT Framework for Industrial
+ Applications
+Precedence: bulk
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+Feedback-ID: 15385996:1961510:broadcast:CK
+List-Unsubscribe: 
+ <mailto:unsub+92u9qde2d0fnhq8p7o3c9hz3vmd33aw@convertkit-mail.com>,
+ <https://unsubscribe.kit.com/92u9qde2d0fnhq8p7o3c9hz3vmd33aw>
+X-Report-Spam: <abuse@convertkit.com>
+X-Report-Abuse: <abuse@convertkit.com>
+X-SG-EID: 
+ =?us-ascii?Q?u001=2EiZotgo3AsPZ5pId2LY7SbctmhO9n9G6ANeFScP2tp4BCc=2FT81jsPxvTR3?=
+ =?us-ascii?Q?nt3JPD7kuyySvQvSpcaG7dtEe+4BxffPhcddXQC?=
+ =?us-ascii?Q?mDY+1olT21thhyQ5ZQAtC=2Fs9jU4y+8AH455DaaU?=
+ =?us-ascii?Q?dNVnIDxOehOr8KTkCyxahUYVsn4YzYQ4EfHK=2F4d?=
+ =?us-ascii?Q?+O8+z4cgy9H6xBmaWQMP4y81Zaa=2F5SY50TIVJGc?=
+ =?us-ascii?Q?oDkrPKfd7zLGCBILHAoyAzcQwZER+Zyc8J0lwSf?= =?us-ascii?Q?3Fh4?=
+X-SG-ID: 
+ =?us-ascii?Q?u001=2ESdBcvi+Evd=2FbQef8eZF3BpTL9BgbK5wfSJMJGMsmprBTLquV1ImzFIrgT?=
+ =?us-ascii?Q?SaJ3+RZRPBSoVFmaPoxD=2F6wXta+nQeq+Rldivh=2F?=
+ =?us-ascii?Q?fHFcewim16r3eHrkO8ZTMUOZrtde8=2FDgBfWCl9z?=
+ =?us-ascii?Q?2C2PAdP81S13lisZyt=2FVI90RfXeY1KnAsHZ850x?=
+ =?us-ascii?Q?to3FiaAWkY+VCTDeaThKaGw3qQ+qGxzfiU9IPSb?=
+ =?us-ascii?Q?Id5KIIqKJxAV7k3MSaQtbS6eIdHMB4iSE4LCHq1?=
+ =?us-ascii?Q?qtqjWReOHV7HWQIlBzQf3bRWK1nYvjumA6K1iPx?=
+ =?us-ascii?Q?JbVXrmZHhMOrUXQLJrbgRpXhlApidw=2FV1rlrIeO?=
+ =?us-ascii?Q?KehE4wRhiu8zlYZ6Yu=2FXz2UtvnhAjPADWJVEjVp?=
+ =?us-ascii?Q?xIdebcX360Q5XKEn7nA=2FhlfZl7TMtkKi2=2FqyVgc?=
+ =?us-ascii?Q?HIUv=2FryAZgLpI0m735Iv6hxaippR29+Dquz32wn?= =?us-ascii?Q?V?=
+To: Connor <hello@connor.zip>
+X-Entity-ID: u001.uYtz+vLHy6+5hH88McS5ZQ==
+X-MANTSH: 1TFkXHx0RCllEF2FBQFl+Y3pwb099EQpZTRdkRURPEQpZSRcZGnEYBhkadwYHGxg
+ GGgYaBhsaGgYHHBpxGhAZdwYaBhoGGgYaBhoGGnEaEBp3BhoRClleF2xseREKQ04XUHpMbXpsQ
+ Rl8EmhBY3JyR3xwSHVDTUtaSER+TGgTWEcRClhcFxkEGgQfGgUbGgQbHBgEGBMEGB4SEBseGh8
+ aEQpeWRdPeQVsHhEKTVwXHhkcEQpMWhdoRGtvexEKTEYXTU1rEQpDWhcbHxMEGxIZBBgaGgQeH
+ REKQl4XGxEKQkYXZEd9f2Z+WlMfTHsRCkJHF2FCZkhefB9BbFtoEQpCXBcbEQpeThcbEQpCSxd
+ uWEtyEgFOZVxEQREKQkkXblhLchIBTmVcREERCkJFF2ZsfR99bF4FR0h+EQpCThduWEtyEgFOZ
+ VxEQREKQkwXbEVEfhhYTQVgGFMRCkJsF21cSExseFBhaUtuEQpCQBd6GxkSQlMaXGhFTBEKQlg
+ Xa0xBWlpvH28aZFkRClpYFx4RCnBoF2dlbWxrSXh6Hhh5EBwEGxEKcGgXZxtZWkZcXXMeHW8QG
+ BEKcGgXZh5AZ0RYRXsSHRIQExEKcGgXZEhCGGJ/f39zTRgQBxsEHBEKcGgXaWxEbBx4HGlOfx8
+ QGhEKcGgXZXJJW3JjGkEbY1oQGxsRCnBoF2h6YE1NRx0eeh9dEBoRCnBoF2hrH10YH1J8QktrE
+ BoRCnB/F2wFBU4bcltgTltaEBseEQpwXxdhaxx9TWdNEx5mBRAHGBgRCnB9F3pzaVwFQwV9ekY
+ aEBoRCnB/F2gff2ZAT2FibnhvEAcbGhkRCnBfF2gdTx8aGnpJG0cZEBoRCnB9F2FcbnMaYx0Tf
+ 39MEBoRCnBfF2hGZ20fekMfARNeEBoRCnB9F2hsf0x7Y3xDfBhDEBoRCnBfF2BGe11oEkZZaWR
+ tEAcYGBEKcH0XYkhzUEZZXGlMYEsQGhEKcF8Xa3tYfX5pHUB6eUIQBxkaEQpwfRdvXnBhTEZsS
+ GkdWRAaEQpwXxdtbkQdbloFElhnYRAHGxgRCnB9F2kTaBlNWHJSQ3hzEBoRCnB/F2xcf2kTTUF
+ LZ18YEBkfEQpwXxdtbB8fbHNdXmx6bxAaEQpwfRdrfHBnHWIYbHx5GRAaEQpwXxdvTWlzT2NcU
+ k9wcBATBB0RCnB9F3pSaVl6R215YHhTEBoRCnBfF2hhRhxNQH99GQEBEBsSEQpwfRdrEmJBUGk
+ YRlBacxAaEQpwfRd6c2lcBUMFfXpGGhAaEQpwfRdhXG5zGmMdE39/TBAaEQpwbBdnGEt+ZXx9Y
+ 31kExAHGRoRCnBMF2JPYkZjHB17RVhZEBoRCm1+FxoRClhNF0sR
+X-Authority-Info: v=2.4 cv=DZBFqetW c=1 sm=1 tr=0 ts=67164cdd b=1 cx=c_pps a=Ym4RQ3yrEXta9kwfExe9bg==:117 a=Ym4RQ3yrEXta9kwfExe9bg==:17 a=DAUX931o1VcA:10 a=Gz7XvtfQauMA:10 a=P28mK26m4rIA:10 a=Bkgw7SFVAAAA:8 a=Dw5zRoPsAAAA:8 a=44vNyYlYAAAA:8 a=UVq9kkz1AAAA:8 a=3W2r9cuJw6YPCj_7-UAA:9 a=QEXdDO2ut3YA:10 a=KVIC_3IWu_q_hbf_TUUL:22 a=uEntDZ5OAAAA:20 a=CUDK1dvpTJGLkj9XprIA:9 a=K2b3y4tyHJ-1SWZL:21 a=_W_S_7VecoQA:10 a=X30XplJIOq07_fIErTJJ:22 a=iN9rT86CrASfy9WEWd19:22 a=F6gmJioMRb4EJGc-FThI:22 a=sUTIt_Br8VA1wznqNc3A:22 cc=prm
+X-Proofpoint-GUID: zPfGPFk3V8BkIXXmVZb_igapbnTfB9rm
+X-Proofpoint-ORIG-GUID: zPfGPFk3V8BkIXXmVZb_igapbnTfB9rm
+
+--a9c4115d1397ada69dbc577ff6b0c6a8d20c0ff1f0ebd9d3a8f3bf6054ec
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=utf-8
+Mime-Version: 1.0
+
+A Scalable Real-Time SDN-Based MQTT Framework for Industrial
+Applications
+-----------------------------------------------------------------
+
+JournalClub.io, October 21st, 2024
+
+Hi Connor, today's article comes from the IEEE Open Journal of
+the Industrial Electronics Society. The authors are Shahri et
+al., from the University of Aveiro, in Portugal. In this paper
+they argue that the MQTT protocol is not suitable for industrial
+applications because it lacks timeliness guarantees. They propose
+a new system to overcome these limitations. Let's see what they
+came up with.
+
+-->Listen to the Audio Version (mp3) (
+https://click.convertkit-mail2.com/92u9qde2d0fnhq8p7o3c9hz3vmd33aw/dpheh0h0=
+93ldedum/aHR0cHM6Ly9zMy5hbWF6b25hd3MuY29tL2pvdXJuYWxjbHViLmlvL21xdHQtZnVsbC=
+5tcDM=3D
+)
+Listen to the Audio Version (mp3) (
+https://s3.amazonaws.com/journalclub.io/mqtt-full.mp3 )
+
+Let=E2=80=99s say you and I are Oompa Loompas in a chocolate factory. We
+have various jobs, and we do all the meaningful work, while the
+crazy guy in the hat gets all the credit. But that=E2=80=99s fine, it=E2=80=
+=99s
+what we signed up for. Your job is to take caramel squares and
+dip them in chocolate. Then you hand them to me. I sprinkle a
+little salt on top and carefully wrap each chocolate-covered
+caramel in a cellophane wrapper, twist the ends, and then place
+that carefully in a box lined with tissue paper. You dip, I wrap.
+
+Everything=E2=80=99s fine except you can dip way faster than I can wrap.
+It takes you 2 seconds to dunk a caramel, and it takes me 10
+seconds to sprinkle, wrap, and put it in the box. So what do we
+do? If you dunk as fast as you can, you=E2=80=99re going to be sending me
+chocolates 5X faster than I can wrap them, and within a few
+minutes we=E2=80=99re going to have an =E2=80=9CI Love Lucy=E2=80=9D situat=
+ion where I=E2=80=99m
+stuffing chocolates in my pockets to keep up with your pace.
+Nobody wants that.
+
+So we have at least two options. We can, for example:
+
+* Hire 4 more Oompa Loompas to work with me, doing the same job.
+So now we can collectively wrap them just as fast as you can dunk
+them. But for maximum efficiency when you wrap a chocolate, it
+needs to go to whichever Oompa Loompa has their hands free. So we
+need a mechanism, some kind of fancy conveyor belt that can do
+that.
+* Leave it as just me at the wrapping station, but instead of the
+chocolates coming right to me, they should get placed on a
+cooling rack. So now I don=E2=80=99t need to worry about how fast you=E2=80=
+=99re
+placing them on the cooling rack; I=E2=80=99ll just take one rack at a
+time, pull one chocolate off, and take my time wrapping it, then
+move on to the next one. This makes sense in a lot of cases
+because let=E2=80=99s say you only dunk caramels for the one hour a day
+after the caramel cooking process finishes. So during that hour
+you=E2=80=99re dunking like a madman, but in reality, I don=E2=80=99t need =
+to
+keep up with you during that moment. In the course of my 8-hour
+shift, I=E2=80=99ll be able to more than cover the caramels you dunked
+during your hour.
+
+In these two examples: the fancy conveyor belt, and the cooling
+racks. These are both examples of queues. And you and I, the
+Oompa Loompas, are components or =E2=80=9Cworkers=E2=80=9D in a distributed
+system (a factory in this case). The queues in our factory, these
+special pieces of equipment that allow us to buffer the work that
+needs to be done between different components, are the core of
+all distributed systems. Whether those distributed systems are
+web applications, car assembly lines, or a long-running mapreduce
+functions, odds are: there is some kind of queuing mechanism at
+their core. Queues are the fundamental data structure, the
+skeleton that makes giant unwieldy, unpredictable systems
+possible. In my opinion, this was best articulated in 2014 in the
+Reactive Manifesto. If you=E2=80=99ve never read it, check out
+reactivemanifesto.org (
+https://click.convertkit-mail2.com/92u9qde2d0fnhq8p7o3c9hz3vmd33aw/e0hph7h0=
+3x8m76i8/aHR0cHM6Ly9yZWFjdGl2ZW1hbmlmZXN0by5vcmc=3D
+) it only takes a couple of minutes to read the whole thing.
+
+There are a number of commercial queuing products on the market.
+AWS SQS is probably the biggest name there; Google Cloud also
+offers a pub/sub that=E2=80=99s very popular. But those kinds of cloud
+service offerings aren=E2=80=99t always the right form factor for the
+system you=E2=80=99re building.
+=E2=80=8B
+=E2=80=8BBy the way, don=E2=80=99t get hung up on the difference between a
+=E2=80=9Cpub/sub=E2=80=9D and a =E2=80=9Cqueue=E2=80=9D. There are certainl=
+y differences but for
+the purpose of this episode we=E2=80=99re treating them as one family of
+products and using the terms interchangeably.
+
+Anyway, sometimes it makes sense to use the cloud queues,
+sometimes it makes sense to operate your own queue. Many of the
+open-source options aren=E2=80=99t just applications, but they=E2=80=99re
+actually a set of novel queuing protocols and the application
+that uses them. So if you use RabbitMQ, that=E2=80=99s all going to be
+based on the AMQP protocol. If you=E2=80=99re going to use ZeroMQ, it=E2=80=
+=99s
+based on ZMTP.
+
+Side note about ZeroMQ. If you want to go down a rabbit hole on
+queuing, there is a YouTube video from a decade ago called
+=E2=80=9CPieter Hintjens - Distribution, Scale and Flexibility with
+ZeroMQ (
+https://click.convertkit-mail2.com/92u9qde2d0fnhq8p7o3c9hz3vmd33aw/7qh7h8ho=
+2grd9lhz/aHR0cHM6Ly95b3V0dS5iZS95aEdYSjlKdDMtQQ=3D=3D
+)=E2=80=9D that only has, I think, 12k total views. It is in my top 5
+best tech talks I=E2=80=99ve ever seen. If you=E2=80=99re in management or
+leadership in any way and you=E2=80=99ve never heard of Conway's Law,
+stop listening to this episode right now and go watch that
+instead. RIP to Pieter.
+
+I digress. In addition to the AMQP protocol and the ZMTP
+protocol, there=E2=80=99s a protocol called MQTT: the Message Queuing
+Telemetry Transport protocol. Like some of the others, it=E2=80=99s an
+application-layer protocol but it's built on top of TCP. So if
+you think of the OSI model, it lives in the same layer as things
+like HTTP, FTP, and SSH. MQTT has been around since the late 90s;
+it=E2=80=99s big and open, it has an ISO standard, and a governing body
+and all that. It=E2=80=99s not like a small 1-person-in-a-garage kind of
+thing, it=E2=80=99s a big legitimate protocol, and changes to that
+protocol take time, and there=E2=80=99s a process and a bureaucracy to
+navigate. MQTT doesn=E2=80=99t change on a whim.
+
+So that brings us to today=E2=80=99s paper, which, by my account, is at
+least the 6th paper by these authors about this topic. They have
+been, since, I believe 2021, slowly building the case in a series
+of articles that MQTT isn=E2=80=99t currently suitable for industrial
+applications, and they have a proposal for how exactly we can
+overcome that.
+
+In previous work, they defined the problem space, mapped out
+possible options, and architected a solution, and this paper is
+actually just enhancing the previous solution and then running a
+bunch of advanced benchmarking and analysis on it to prove that
+it does what they claim it can do. Based on some of the hints
+they dropped during the paper, I=E2=80=99m going to guess that they have
+at least 5-6 more papers to publish on this, that will probably
+take them several more years, so this one comes right in the
+middle of this giant decade-long case that they=E2=80=99re making. Since
+we=E2=80=99ve never talked about their research at all, I figured now
+would be a good time to catch up on the problem they defined, the
+solution they=E2=80=99ve architected so far, and then give a preview of
+where this research is going over the next couple of years.
+
+The problem with MQTT:
+
+Think of MQTT as offering 3 types of message delivery:
+
+* Unicast: One sender, one recipient
+* Multicast: One sender, a sub-group of recipients
+* Broadcast: One sender, all recipients. Technically, MQTT
+doesn=E2=80=99t do broadcasts natively, but in practice, that can be
+implemented by the user.
+
+Within those services, they offer different QoS (quality of
+service) guarantees, named QoS 0, 1, and 2:
+
+* QoS 0: Send once. This is like me dropping a postcard in a
+mailbox. I can guarantee that I sent it. Whether or not anyone
+ever receives it is really their problem. In some cases, this is
+all you need. Maybe the thing going into the queue is an alert
+notification. And the user only needs to see it if they=E2=80=99re
+currently in the app and have strong WiFi, and if they miss the
+alert, it doesn=E2=80=99t really matter.
+* QoS 1: Deliver at least once. This is like me sending a letter
+that requires a signature. If they try to deliver it and nobody=E2=80=99s
+home, I might just send another copy, and another, and another,
+and now I have multiple mail carriers all coming to your door
+with this letter. And when you finally do answer the door, they
+might hand you a stack of a hundred of them. That=E2=80=99s fine, as long
+as I know you got at least one of them, and signed it, that=E2=80=99s all
+I care about. Sometimes a system will need to perform idempotent
+operations where it really doesn=E2=80=99t matter if it=E2=80=99s invoked t=
+wice,
+as long as it=E2=80=99s invoked at least once=E2=80=94that's all we care ab=
+out.
+* QoS 2: Deliver exactly once. This is like I=E2=80=99m sending you a
+package of something expensive you ordered from my store. You
+have to get it, and you have to confirm that you got it, but you
+only ordered one, so under no circumstances should you get the
+package twice. Any action in a distributed system that is
+mission-critical and not idempotent would probably fall under
+this use case. That being said, deliver-exactly-once has
+significant overhead. There=E2=80=99s a 4-way handshake involved, and
+just a lot of pieces that need to be synced up. But let=E2=80=99s say
+your system is sending money from one person to another. If that
+needs to happen once and only once, and the ramifications of it
+happening zero times or more than 1 time are disastrous, then the
+overhead of QoS 2 is worth it.
+
+The issue with these guarantees (QoS 0,1,2) is not about what
+they offer, it=E2=80=99s about what they don=E2=80=99t. None of these guara=
+ntees
+offer anything concerning timeliness. The guarantees say what is
+going to happen, but not when it=E2=80=99s going to happen. There=E2=80=99s=
+ no
+way for me to say, for example: =E2=80=9CI need at-least-once delivery
+within this specified time frame=E2=80=9D. Why does this matter? Well,
+let=E2=80=99s go back to the chocolate factory. Let=E2=80=99s say the caram=
+els
+you=E2=80=99re dipping right now are a special order for Violet=E2=80=99s
+birthday, tomorrow. They=E2=80=99re special caramels, they=E2=80=99ve got h=
+er
+name stamped right into the chocolate coating. That order needs
+to be boxed and packaged to go out by this afternoon. You=E2=80=99re
+loading up these cooling racks with chocolates, there=E2=80=99s no way
+for you to communicate to me that not only should I prioritize
+these, but there is a specific deadline I need to hit.
+
+These lack of temporal / timeliness / =E2=80=9Cpredictable execution=E2=80=
+=9D
+guarantees, the authors argue, make MQTT unsuitable for
+industrial environments. And that should make some kind of
+intuitive sense. If you=E2=80=99re running a factory, you need to be able
+to delegate things to different priority levels and attach
+specific timelines to their delivery and execution. Without that,
+your job is a lot harder.
+
+What the authors propose:
+
+Starting in MQTT version 5, which was released in 2019,
+developers can add what=E2=80=99s called =E2=80=9Cuser properties=E2=80=9D =
+to a message.
+Instead of the message having a fixed header and a payload,
+there=E2=80=99s a fixed header, a payload, and what=E2=80=99s called a
+variable-payload where you can add key-value pairs of data. So in
+their proposal, they=E2=80=99re adding a series of key-value pairs to the
+variable payload:
+
+* Flow Index (i): This identifies the specific data flow. It
+helps in distinguishing multiple flows of messages in the system.
+* Transmission Time (Ci): Specifies the time it takes to transmit
+a message, including any overhead.
+* Priority (Pi): Indicates the priority level of the message.
+* Period (Ti): Defines the minimum inter-arrival time or period
+between two successive messages published by the sender.
+* Deadline (Di): Specifies the maximum allowable time for the
+message to be delivered. It must be less than or equal to the
+period.
+* Bandwidth Usage (BWi): Defines the maximum bandwidth that the
+message can use.
+
+But all of those new key-value pairs in the user properties don=E2=80=99t
+magically do anything by themselves, right? It=E2=80=99s like, if I drop
+a postcard in the mail and write on it =E2=80=9CHey USPS, deliver this by
+Thursday=E2=80=9D, that=E2=80=99s not going to have any effect on anything =
+at
+all. Conveying my timeliness desire doesn=E2=80=99t matter if there=E2=80=
+=99s not
+also the infrastructure in place to make good on my request. With
+USPS, that means buying the class of post that guarantees
+delivery at a certain date. With MQTT, we need some kind of
+system that can look at the requests in the header and make good
+on them. That is where SDN comes in.
+
+Very briefly, SDN (software-defined networking) is basically an
+application built into switches, routers, and other internet
+infrastructure that can route packets based on logic instead of
+just analog routing. We covered SDN in more detail in the episode
+on October 9th titled =E2=80=9CTraffic Classification in Software-Defined
+Networking Using Genetic Programming Tools.=E2=80=9D I=E2=80=99d recommend
+reviewing that episode for more details. And another sidenote:
+This is a good time to mention, as of yesterday afternoon, the
+episode archive is up at JournalClub.io/archive (
+https://click.convertkit-mail2.com/92u9qde2d0fnhq8p7o3c9hz3vmd33aw/owhkhqhr=
+mz2xwdav/aHR0cHM6Ly9qb3VybmFsY2x1Yi5pby9hcmNoaXZl
+). So if there are any episodes from the past that you missed and
+you want access to, like the SDN episode I just mentioned, go to
+the archive, find the episode name, and then send me a note with
+the episode name so I can re-trigger the email send for you. At
+some point, re-sends will be fully automated, but, baby steps.
+
+Anyway, back to the story. When MQTT is running, and its
+publishers are sending unicasts, multicasts, and broadcasts
+through the MQTT broker and out to the subscribers, the packets
+involved may be getting routed through SDN (if you=E2=80=99ve set up that
+kind of system). So in the authors=E2=80=99 proposal, the SDN looks at
+the headers, sees the timeliness requests, and then performs the
+routing in a way that maximizes the chances of those timeliness
+requests being honored.
+
+And that=E2=80=99s basically it, in a nutshell. The system they defined
+is called RT-MQTT (Real-Time MQTT) and MRT-MQTT (Multicast
+Real-Time MQTT), which for all intents and purposes is a superset
+of RT-MQTT with extra logic for those use cases.
+
+Most of the paper is spent defining the architecture, governing
+logic and algorithms for how the SDNs would operate, but then the
+authors spend a considerable amount of time simulating and
+analyzing the performance of their new system. They set up
+emulations in Mininet, which is a network emulator, and used the
+Ryu OpenFlow controller to simulate some of the lower-level
+aspects of SDN. They ran the system under low, medium, and high
+loads and focused their analysis on WCRT.
+
+WCRT stands for Worst-Case Response Time. If you=E2=80=99re familiar with
+Big O notation for algorithms, it=E2=80=99s a lot like that, but for a
+distributed system, in the way that they both represent upper
+bounds. In order to produce WCRT, they first calculated HA and
+TA. HA (Holistic Approach) focuses on the cumulative delays
+across all nodes and switches on the path, while TA (Trajectory
+Approach) calculates the latest time a message could start at its
+final destination by working backward through the network path.
+HA is more pessimistic, but TA requires more computational
+resources and complexity to implement. So they considered both.
+Here are the broad strokes of their results:
+
+* MRT-MQTT outperforms MQTT: The system reduced Worst-Case
+Response Time (WCRT) significantly for time-sensitive traffic in
+multi-edge networks.
+* Traffic prioritization enhances timing guarantees: Prioritized
+messages exhibited lower WCRT compared to lower-priority
+messages, showing that the framework effectively manages
+different priority levels.
+* Schedulability analysis validated: Both Holistic Approach (HA)
+and Trajectory Approach (TA) provided accurate WCRT estimates
+that closely matched the experimentally observed results,
+demonstrating the reliability of the analysis methods.
+* Trade-off between accuracy and complexity: HA provided faster
+but more pessimistic results, while TA gave tighter, more precise
+WCRT bounds but at the cost of increased computational
+complexity.
+
+The road ahead:=E2=80=8B
+=E2=80=8B
+The results so far are promising, but the authors aren't done
+yet. Over the next few years, we can expect more papers from them
+that will go further and deeper on this. Future research is
+likely to focus on improving scalability across even larger
+multi-edge networks, refining the precision of the real-time
+schedulability analyses, and exploring advanced techniques for
+handling mixed traffic loads with minimal impact on non-real-time
+data. They may also investigate integrating more robust security
+mechanisms that don't compromise the timeliness guarantees.
+
+We=E2=80=99ll be keeping an eye on them as they continue to publish. And
+when there=E2=80=99s a big announcement, you=E2=80=99ll hear about it here =
+on
+Journal Club.
+
+If you=E2=80=99d like to view the architecture diagrams they created for
+this system, or the formulas that govern its execution, please do
+download the paper. If you=E2=80=99d like to read the previous papers
+this team authored on this subject, they=E2=80=99re listed in the
+reference section, as reference numbers 12-16.
+
+---------------
+Want the paper?
+---------------
+
+This link will take you to the original DOI for the paper (on the
+publisher's site). You'll be able to grab the PDF from them
+directly.
+
+-->Download Now (
+https://click.convertkit-mail2.com/92u9qde2d0fnhq8p7o3c9hz3vmd33aw/z2hghnh3=
+2gq5evbp/aHR0cHM6Ly9kb2kub3JnLzEwLjExMDkvT0pJRVMuMjAyNC4zMzczMjMy
+)
+Download Now ( https://doi.org/10.1109/OJIES.2024.3373232 )
+
+=E2=80=8B
+I hope you enjoyed this episode of Journal Club.
+=E2=80=8B
+See you tomorrow!
+=E2=80=8B
+Malcolm Diggs
+
+113 Cherry St #92768, Seattle, WA 98104-2205
+=E2=80=8BUnsubscribe (
+https://unsubscribe.convertkit-mail2.com/92u9qde2d0fnhq8p7o3c9hz3vmd33aw
+) =C2=B7 Preferences (
+https://preferences.convertkit-mail2.com/92u9qde2d0fnhq8p7o3c9hz3vmd33aw
+)=E2=80=8B
+--a9c4115d1397ada69dbc577ff6b0c6a8d20c0ff1f0ebd9d3a8f3bf6054ec
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=utf-8
+Mime-Version: 1.0
+
+<!DOCTYPE html>
+<html style=3D"line-height:1.5">
+<head>
+<style>@media only screen{body,table,td,a{-webkit-text-size-adjust:100%;-ms=
+-text-size-adjust:100%;}}
+@media only screen{*{-webkit-font-smoothing:antialiased;-moz-osx-font-smoot=
+hing:grayscale;}}
+@media only screen and (max-width:600px){.email-container{padding:0 !import=
+ant;}}
+@media only screen { .email * { word-break: break-word; } }
+@media screen and (max-width: 384px) { .mail-message-content { width: 414px=
+ !important; } }
+@media only screen and (max-width:600px) {
+        .ck-padding-left-none {
+          padding-left: 0px !important;
+        }
+        .ck-padding-right-none {
+          padding-right: 0px !important;
+        }
+        .ck-padding-left-mobile-friendly {
+          padding-left: 18px !important;
+        }
+        .ck-padding-right-mobile-friendly {
+          padding-right: 18px !important;
+        }
+    }
+@media only screen and (max-width:600px) {
+        .ck-layout-block.ck-layout-stack td {
+          display: block !important;
+          width: 100% !important;
+          padding: 0 !important;
+        }
+        .ck-column.ck-column-stack {
+          margin-bottom: 32px !important;
+        }
+        .ck-padding-3-top-mobile-friendly {
+          padding-top: 12px !important;
+        }
+        .ck-padding-3-right-mobile-friendly {
+          padding-right: 12px !important;
+        }
+        .ck-padding-3-bottom-mobile-friendly {
+          padding-bottom: 12px !important;
+        }
+        .ck-padding-3-left-mobile-friendly {
+          padding-left: 12px !important;
+        }
+     }
+@media only screen and (max-width:600px) {
+        .ck-mobile-font-size {
+          font-size: 50px !important;
+        }
+     }
+@media only screen and (max-width:600px) {
+        .ck-mobile-font-size {
+          font-size: 50px !important;
+        }
+     }
+@media only screen and (max-width:600px) {
+        .ck-mobile-font-size {
+          font-size: 50px !important;
+        }
+     }</style>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8">
+</head>
+<body style=3D"margin:0;padding:0;-webkit-font-smoothing:antialiased;-ms-te=
+xt-size-adjust:100%;-webkit-text-size-adjust:100%;line-height:1.5">
+<div style=3D"background-color:#ffffff"><table role=3D"presentation" cellpa=
+dding=3D"0" cellspacing=3D"0" class=3D"email" style=3D"border-collapse:sepa=
+rate;line-height:1.5;mso-table-lspace:0pt;mso-table-rspace:0pt;background:#=
+ffffff !important;width:100%" bgcolor=3D"#ffffff"><tbody><tr>
+<td style=3D"mso-table-lspace:0pt;mso-table-rspace:0pt;vertical-align:top">=
+<div class=3D"email-container normal" style=3D"padding-top:0;padding-left:0=
+;padding-bottom:30px;padding-right:0;margin:0 auto;max-width:100%">
+<!--[if mso]><style>.button-table { padding: 12px 0 }</style><![endif]--><t=
+able cellpadding=3D"0" cellspacing=3D"0" bgcolor=3D"#ffffff" style=3D"borde=
+r-collapse:separate;line-height:1.5;mso-table-lspace:0pt;mso-table-rspace:0=
+pt;width:100%;margin:0 auto;background-color:#ffffff"><tbody><tr><td style=
+=3D"mso-table-lspace:0pt;mso-table-rspace:0pt;vertical-align:top">
+<div class=3D"ck-section" style=3D"margin:0px auto 40px auto"><center>
+<table cellpadding=3D"0" cellspacing=3D"0" style=3D"border-collapse:separat=
+e;line-height:1.5;mso-table-lspace:0pt;mso-table-rspace:0pt;width:100%;marg=
+in:0 auto;max-width:640px"><tbody><tr>
+<td contenteditable=3D"false" style=3D"mso-table-lspace:0pt;mso-table-rspac=
+e:0pt;vertical-align:top"></td>
+<td width=3D"640" style=3D"mso-table-lspace:0pt;mso-table-rspace:0pt;vertic=
+al-align:top;background-color:#ffffff;background-size:cover;background-posi=
+tion:center;box-sizing:border-box;mso-padding-alt:36px 36px 0px 36px" bgcol=
+or=3D"#ffffff"><div class=3D"ck-inner-section ck-padding-left-mobile-friend=
+ly ck-padding-right-mobile-friendly" style=3D"padding:36px 36px 0px 36px"><=
+div style=3D"margin-left:auto;margin-right:auto;max-width:640px"><table cla=
+ss=3D"ck-layout-block" width=3D"100%" border=3D"0" cellpadding=3D"0" cellsp=
+acing=3D"0" bgcolor=3D"transparent" style=3D"border-collapse:separate;line-=
+height:1.5;mso-table-lspace:0pt;mso-table-rspace:0pt;background-color:trans=
+parent;padding:8px 32px 8px 32px;margin:24px 0px 24px 0px;border-left:solid=
+ 8px #26e108;overflow:hidden;background-size:cover;background-position:cent=
+er"><tbody><tr><td as=3D"td" class=3D"ck-column ck-column-1" width=3D"100%"=
+ style=3D"mso-table-lspace:0pt;mso-table-rspace:0pt;vertical-align:top;back=
+ground-size:cover;background-position:center;box-sizing:border-box;vertical=
+-align:top"><div style=3D"padding:0px 0px 0px 0px">
+<h3 style=3D"font-weight:bold;font-style:normal;font-size:1em;margin:0;font=
+-size:1.17em;margin:1em 0;font-family:Charter, Georgia, Times New Roman, se=
+rif;font-size:28px;color:#12363f;font-weight:400;letter-spacing:0;line-heig=
+ht:1.5;text-transform:none;margin-top:0;margin-bottom:0" class=3D"">A Scala=
+ble Real-Time SDN-Based MQTT Framework for Industrial Applications</h3>
+<p style=3D"margin:1em 0;font-family:-apple-system, BlinkMacSystemFont, san=
+s-serif;font-size:18px;color:#4e585a;font-weight:400;letter-spacing:0;line-=
+height:1.5;text-transform:none;margin-top:8px;margin-bottom:8px" class=3D""=
+>JournalClub.io, October 21st, 2024</p>
+</div></td></tr></tbody></table></div></div></td>
+<td contenteditable=3D"false" style=3D"mso-table-lspace:0pt;mso-table-rspac=
+e:0pt;vertical-align:top"></td>
+</tr></tbody></table>
+<div><!--[if mso]><br /><br /><![endif]--></div>
+</center></div>
+<div class=3D"ck-section" style=3D"margin:0px auto 40px auto"><center>
+<table cellpadding=3D"0" cellspacing=3D"0" style=3D"border-collapse:separat=
+e;line-height:1.5;mso-table-lspace:0pt;mso-table-rspace:0pt;width:100%;marg=
+in:0 auto;max-width:640px"><tbody><tr>
+<td contenteditable=3D"false" style=3D"mso-table-lspace:0pt;mso-table-rspac=
+e:0pt;vertical-align:top"></td>
+<td width=3D"640" style=3D"mso-table-lspace:0pt;mso-table-rspace:0pt;vertic=
+al-align:top;background-color:#ffffff;background-size:cover;background-posi=
+tion:center;box-sizing:border-box;mso-padding-alt:36px 36px 0px 36px" bgcol=
+or=3D"#ffffff"><div class=3D"ck-inner-section ck-padding-left-mobile-friend=
+ly ck-padding-right-mobile-friendly" style=3D"padding:36px 36px 0px 36px"><=
+div style=3D"margin-left:auto;margin-right:auto;max-width:640px">
+<p style=3D"margin:1em 0;font-family:-apple-system, BlinkMacSystemFont, san=
+s-serif;font-size:18px;color:#353535;font-weight:400;letter-spacing:0;line-=
+height:1.5;text-transform:none" class=3D"">Hi  Connor, today's article come=
+s from the IEEE Open Journal of the Industrial Electronics Society. The aut=
+hors are Shahri et al., from the University of Aveiro, in Portugal. In this=
+ paper they argue that the MQTT protocol is not suitable for industrial app=
+lications because it lacks timeliness guarantees. They propose a new system=
+ to overcome these limitations. Let's see what they came up with.</p>
+<!--[if !mso]>--><table width=3D"100%" style=3D"border-collapse:separate;li=
+ne-height:1.5;mso-table-lspace:0pt;mso-table-rspace:0pt"><tbody><tr><td ali=
+gn=3D"center" style=3D"mso-table-lspace:0pt;mso-table-rspace:0pt;vertical-a=
+lign:top"><a class=3D"email-button" href=3D"https://click.convertkit-mail2.=
+com/92u9qde2d0fnhq8p7o3c9hz3vmd33aw/dpheh0h093ldedum/aHR0cHM6Ly9zMy5hbWF6b2=
+5hd3MuY29tL2pvdXJuYWxjbHViLmlvL21xdHQtZnVsbC5tcDM=3D" target=3D"_blank" rel=
+=3D"noopener noreferrer" style=3D"border:0 none;margin-bottom:0.5em;backgro=
+und-color:#11363F;color:#ffffff;border-radius:0px;font-family:-apple-system=
+,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helveti=
+ca Neue',sans-serif;border-color:#11363F;background-color:#11363F;box-sizin=
+g:border-box;border-style:solid;color:#ffffff;display:inline-block;text-ali=
+gn:center;text-decoration:none;padding:12px 20px;margin-top:8px;margin-bott=
+om:8px;font-size:16px;border-radius:4px 4px 4px 4px" url-id=3D"1680052261">=
+Listen to the Audio Version (mp3)</a></td></tr></tbody></table>
+<!--<![endif]--><!--[if mso]><table class=3D"button-table" width=3D"100%" b=
+order=3D"0" cellSpacing=3D"0" cellPadding=3D"0" style=3D"margin-top:8px;mar=
+gin-bottom:8px"><tr><td align=3D"center"><table border=3D"0" cellSpacing=3D=
+"0" cellPadding=3D"0"><tr><td align=3D"center" bgcolor=3D"#11363F" style=3D=
+"background-color:#11363F;overflow:hidden;padding:12px 20px"><a class=3D"em=
+ail-button" href=3D"https://s3.amazonaws.com/journalclub.io/mqtt-full.mp3" =
+target=3D"_blank" rel=3D"noopener noreferrer" style=3D"background-color:inh=
+erit;display:inline-block;text-decoration:none;border-style:solid;margin:0;=
+color:#ffffff;font-size:16px" data-ck-element=3D"button">Listen to the Audi=
+o Version (mp3)</a></td></tr></table></td></tr></table><![endif]-->
+</div></div></td>
+<td contenteditable=3D"false" style=3D"mso-table-lspace:0pt;mso-table-rspac=
+e:0pt;vertical-align:top"></td>
+</tr></tbody></table>
+<div><!--[if mso]><br /><br /><![endif]--></div>
+</center></div>
+<div class=3D"ck-section" style=3D"margin:0px auto 0px auto"><center><table=
+ cellpadding=3D"0" cellspacing=3D"0" style=3D"border-collapse:separate;line=
+-height:1.5;mso-table-lspace:0pt;mso-table-rspace:0pt;width:100%;margin:0 a=
+uto;max-width:640px"><tbody><tr>
+<td contenteditable=3D"false" style=3D"mso-table-lspace:0pt;mso-table-rspac=
+e:0pt;vertical-align:top"></td>
+<td width=3D"640" style=3D"mso-table-lspace:0pt;mso-table-rspace:0pt;vertic=
+al-align:top;background-color:#ffffff;background-size:cover;background-posi=
+tion:center;box-sizing:border-box;mso-padding-alt:18px 36px 18px 36px" bgco=
+lor=3D"#ffffff"><div class=3D"ck-inner-section ck-padding-left-mobile-frien=
+dly ck-padding-right-mobile-friendly" style=3D"padding:18px 36px 18px 36px"=
+><div style=3D"margin-left:auto;margin-right:auto;max-width:640px">
+<p style=3D"margin:1em 0;font-family:-apple-system, BlinkMacSystemFont, san=
+s-serif;font-size:18px;color:#353535;font-weight:400;letter-spacing:0;line-=
+height:1.5;text-transform:none" class=3D"">Let=E2=80=99s say you and I are =
+Oompa Loompas in a chocolate factory. We have various jobs, and we do all t=
+he meaningful work, while the crazy guy in the hat gets all the credit. But=
+ that=E2=80=99s fine, it=E2=80=99s what we signed up for. Your job is to ta=
+ke caramel squares and dip them in chocolate. Then you hand them to me. I s=
+prinkle a little salt on top and carefully wrap each chocolate-covered cara=
+mel in a cellophane wrapper, twist the ends, and then place that carefully =
+in a box lined with tissue paper. You dip, I wrap.</p>
+<p style=3D"margin:1em 0;font-family:-apple-system, BlinkMacSystemFont, san=
+s-serif;font-size:18px;color:#353535;font-weight:400;letter-spacing:0;line-=
+height:1.5;text-transform:none" class=3D"">Everything=E2=80=99s fine except=
+ you can dip way faster than I can wrap. It takes you 2 seconds to dunk a c=
+aramel, and it takes me 10 seconds to sprinkle, wrap, and put it in the box=
+. So what do we do? If you dunk as fast as you can, you=E2=80=99re going to=
+ be sending me chocolates 5X faster than I can wrap them, and within a few =
+minutes we=E2=80=99re going to have an =E2=80=9CI Love Lucy=E2=80=9D situat=
+ion where I=E2=80=99m stuffing chocolates in my pockets to keep up with you=
+r pace. Nobody wants that.</p>
+<p style=3D"margin:1em 0;font-family:-apple-system, BlinkMacSystemFont, san=
+s-serif;font-size:18px;color:#353535;font-weight:400;letter-spacing:0;line-=
+height:1.5;text-transform:none" class=3D"">So we have at least two options.=
+ We can, for example:</p>
+<ul class=3D"unordered_list" style=3D"margin:1em 0;margin-left:1em;padding:=
+0;list-style-position:outside !important;font-family:-apple-system, BlinkMa=
+cSystemFont, sans-serif;font-size:18px;color:#353535;font-weight:400;letter=
+-spacing:0;line-height:1.5;text-align:left;text-transform:none;list-style-p=
+osition:inside">
+<li class=3D"list_item" style=3D"padding:0 0 0 1em;margin:0;margin-left:1em=
+"><span>Hire 4 more Oompa Loompas to work with me, doing the same job. So n=
+ow we can collectively wrap them just as fast as you can dunk them. But for=
+ maximum efficiency when you wrap a chocolate, it needs to go to whichever =
+Oompa Loompa has their hands free. So we need a mechanism, some kind of fan=
+cy conveyor belt that can do that.</span></li>
+<li class=3D"list_item" style=3D"padding:0 0 0 1em;margin:0;margin-left:1em=
+"><span>Leave it as just me at the wrapping station, but instead of the cho=
+colates coming right to me, they should get placed on a cooling rack. So no=
+w I don=E2=80=99t need to worry about how fast you=E2=80=99re placing them =
+on the cooling rack; I=E2=80=99ll just take one rack at a time, pull one ch=
+ocolate off, and take my time wrapping it, then move on to the next one. Th=
+is makes sense in a lot of cases because let=E2=80=99s say you only dunk ca=
+ramels for the one hour a day after the caramel cooking process finishes. S=
+o during that hour you=E2=80=99re dunking like a madman, but in reality, I =
+don=E2=80=99t need to keep up with you during that moment. In the course of=
+ my 8-hour shift, I=E2=80=99ll be able to more than cover the caramels you =
+dunked during your hour.</span></li>
+</ul>
+<p style=3D"margin:1em 0;font-family:-apple-system, BlinkMacSystemFont, san=
+s-serif;font-size:18px;color:#353535;font-weight:400;letter-spacing:0;line-=
+height:1.5;text-transform:none" class=3D"">In these two examples: the fancy=
+ conveyor belt, and the cooling racks. These are both examples of queues. A=
+nd you and I, the Oompa Loompas, are components or =E2=80=9Cworkers=E2=80=
+=9D in a distributed system (a factory in this case). The queues in our fac=
+tory, these special pieces of equipment that allow us to buffer the work th=
+at needs to be done between different components, are the core of all distr=
+ibuted systems. Whether those distributed systems are web applications, car=
+ assembly lines, or a long-running mapreduce functions, odds are: there is =
+some kind of queuing mechanism at their core. Queues are the fundamental da=
+ta structure, the skeleton that makes giant unwieldy, unpredictable systems=
+ possible. In my opinion, this was best articulated in 2014 in the Reactive=
+ Manifesto. If you=E2=80=99ve never read it, check out <a href=3D"https://c=
+lick.convertkit-mail2.com/92u9qde2d0fnhq8p7o3c9hz3vmd33aw/e0hph7h03x8m76i8/=
+aHR0cHM6Ly9yZWFjdGl2ZW1hbmlmZXN0by5vcmc=3D" target=3D"_blank" rel=3D"noopen=
+er noreferrer" style=3D"color:#0000ff" url-id=3D"1680052262">reactivemanife=
+sto.org</a> it only takes a couple of minutes to read the whole thing.</p>
+<p style=3D"margin:1em 0;font-family:-apple-system, BlinkMacSystemFont, san=
+s-serif;font-size:18px;color:#353535;font-weight:400;letter-spacing:0;line-=
+height:1.5;text-transform:none" class=3D"">There are a number of commercial=
+ queuing products on the market. AWS SQS is probably the biggest name there=
+; Google Cloud also offers a pub/sub that=E2=80=99s very popular. But those=
+ kinds of cloud service offerings aren=E2=80=99t always the right form fact=
+or for the system you=E2=80=99re building.<br>=E2=80=8B<br>=E2=80=8B<em>By =
+the way, don=E2=80=99t get hung up on the difference between a =E2=80=9Cpub=
+/sub=E2=80=9D and a =E2=80=9Cqueue=E2=80=9D. There are certainly difference=
+s but for the purpose of this episode we=E2=80=99re treating them as one fa=
+mily of products and using the terms interchangeably.</em></p>
+<p style=3D"margin:1em 0;font-family:-apple-system, BlinkMacSystemFont, san=
+s-serif;font-size:18px;color:#353535;font-weight:400;letter-spacing:0;line-=
+height:1.5;text-transform:none" class=3D"">Anyway, sometimes it makes sense=
+ to use the cloud queues, sometimes it makes sense to operate your own queu=
+e. Many of the open-source options aren=E2=80=99t just applications, but th=
+ey=E2=80=99re actually a set of novel queuing protocols and the application=
+ that uses them. So if you use RabbitMQ, that=E2=80=99s all going to be bas=
+ed on the AMQP protocol. If you=E2=80=99re going to use ZeroMQ, it=E2=80=99=
+s based on ZMTP.</p>
+<p style=3D"margin:1em 0;font-family:-apple-system, BlinkMacSystemFont, san=
+s-serif;font-size:18px;color:#353535;font-weight:400;letter-spacing:0;line-=
+height:1.5;text-transform:none" class=3D"">Side note about ZeroMQ. If you w=
+ant to go down a rabbit hole on queuing, there is a YouTube video from a de=
+cade ago called =E2=80=9C<a href=3D"https://click.convertkit-mail2.com/92u9=
+qde2d0fnhq8p7o3c9hz3vmd33aw/7qh7h8ho2grd9lhz/aHR0cHM6Ly95b3V0dS5iZS95aEdYSj=
+lKdDMtQQ=3D=3D" target=3D"_blank" rel=3D"noopener noreferrer" style=3D"colo=
+r:#0000ff" url-id=3D"1680052263">Pieter Hintjens - Distribution, Scale and =
+Flexibility with ZeroMQ</a>=E2=80=9D that only has, I think, 12k total view=
+s. It is in my top 5 best tech talks I=E2=80=99ve ever seen. If you=E2=80=
+=99re in management or leadership in any way and you=E2=80=99ve never heard=
+ of Conway's Law, stop listening to this episode right now and go watch tha=
+t instead. RIP to Pieter.</p>
+<p style=3D"margin:1em 0;font-family:-apple-system, BlinkMacSystemFont, san=
+s-serif;font-size:18px;color:#353535;font-weight:400;letter-spacing:0;line-=
+height:1.5;text-transform:none" class=3D"">I digress. In addition to the AM=
+QP protocol and the ZMTP protocol, there=E2=80=99s a protocol called MQTT: =
+the Message Queuing Telemetry Transport protocol. Like some of the others, =
+it=E2=80=99s an application-layer protocol but it's built on top of TCP. So=
+ if you think of the OSI model, it lives in the same layer as things like H=
+TTP, FTP, and SSH. MQTT has been around since the late 90s; it=E2=80=99s bi=
+g and open, it has an ISO standard, and a governing body and all that. It=
+=E2=80=99s not like a small 1-person-in-a-garage kind of thing, it=E2=80=99=
+s a big legitimate protocol, and changes to that protocol take time, and th=
+ere=E2=80=99s a process and a bureaucracy to navigate. MQTT doesn=E2=80=99t=
+ change on a whim.</p>
+<p style=3D"margin:1em 0;font-family:-apple-system, BlinkMacSystemFont, san=
+s-serif;font-size:18px;color:#353535;font-weight:400;letter-spacing:0;line-=
+height:1.5;text-transform:none" class=3D"">So that brings us to today=E2=80=
+=99s paper, which, by my account, is at least the 6th paper by these author=
+s about this topic. They have been, since, I believe 2021, slowly building =
+the case in a series of articles that MQTT isn=E2=80=99t currently suitable=
+ for industrial applications, and they have a proposal for how exactly we c=
+an overcome that.</p>
+<p style=3D"margin:1em 0;font-family:-apple-system, BlinkMacSystemFont, san=
+s-serif;font-size:18px;color:#353535;font-weight:400;letter-spacing:0;line-=
+height:1.5;text-transform:none" class=3D"">In previous work, they defined t=
+he problem space, mapped out possible options, and architected a solution, =
+and this paper is actually just enhancing the previous solution and then ru=
+nning a bunch of advanced benchmarking and analysis on it to prove that it =
+does what they claim it can do. Based on some of the hints they dropped dur=
+ing the paper, I=E2=80=99m going to guess that they have at least 5-6 more =
+papers to publish on this, that will probably take them several more years,=
+ so this one comes right in the middle of this giant decade-long case that =
+they=E2=80=99re making. Since we=E2=80=99ve never talked about their resear=
+ch at all, I figured now would be a good time to catch up on the problem th=
+ey defined, the solution they=E2=80=99ve architected so far, and then give =
+a preview of where this research is going over the next couple of years.</p=
+>
+<p style=3D"margin:1em 0;font-family:-apple-system, BlinkMacSystemFont, san=
+s-serif;font-size:18px;color:#353535;font-weight:400;letter-spacing:0;line-=
+height:1.5;text-transform:none" class=3D""><u>The problem with MQTT:</u></p=
+>
+<p style=3D"margin:1em 0;font-family:-apple-system, BlinkMacSystemFont, san=
+s-serif;font-size:18px;color:#353535;font-weight:400;letter-spacing:0;line-=
+height:1.5;text-transform:none" class=3D"">Think of MQTT as offering 3 type=
+s of message delivery:</p>
+<ul class=3D"unordered_list" style=3D"margin:1em 0;margin-left:1em;padding:=
+0;list-style-position:outside !important;font-family:-apple-system, BlinkMa=
+cSystemFont, sans-serif;font-size:18px;color:#353535;font-weight:400;letter=
+-spacing:0;line-height:1.5;text-align:left;text-transform:none;list-style-p=
+osition:inside">
+<li class=3D"list_item" style=3D"padding:0 0 0 1em;margin:0;margin-left:1em=
+"><span><strong>Unicast</strong>: One sender, one recipient</span></li>
+<li class=3D"list_item" style=3D"padding:0 0 0 1em;margin:0;margin-left:1em=
+"><span><strong>Multicast</strong>: One sender, a sub-group of recipients</=
+span></li>
+<li class=3D"list_item" style=3D"padding:0 0 0 1em;margin:0;margin-left:1em=
+"><span><strong>Broadcast</strong>: One sender, all recipients. Technically=
+, MQTT doesn=E2=80=99t do broadcasts natively, but in practice, that can be=
+ implemented by the user.</span></li>
+</ul>
+<p style=3D"margin:1em 0;font-family:-apple-system, BlinkMacSystemFont, san=
+s-serif;font-size:18px;color:#353535;font-weight:400;letter-spacing:0;line-=
+height:1.5;text-transform:none" class=3D"">Within those services, they offe=
+r different QoS (quality of service) guarantees, named QoS 0, 1, and 2:</p>
+<ul class=3D"unordered_list" style=3D"margin:1em 0;margin-left:1em;padding:=
+0;list-style-position:outside !important;font-family:-apple-system, BlinkMa=
+cSystemFont, sans-serif;font-size:18px;color:#353535;font-weight:400;letter=
+-spacing:0;line-height:1.5;text-align:left;text-transform:none;list-style-p=
+osition:inside">
+<li class=3D"list_item" style=3D"padding:0 0 0 1em;margin:0;margin-left:1em=
+"><span><strong>QoS 0</strong>: <u>Send once.</u> This is like me dropping =
+a postcard in a mailbox. I can guarantee that I sent it. Whether or not any=
+one ever receives it is really their problem. In some cases, this is all yo=
+u need. Maybe the thing going into the queue is an alert notification. And =
+the user only needs to see it if they=E2=80=99re currently in the app and h=
+ave strong WiFi, and if they miss the alert, it doesn=E2=80=99t really matt=
+er.</span></li>
+<li class=3D"list_item" style=3D"padding:0 0 0 1em;margin:0;margin-left:1em=
+"><span><strong>QoS 1</strong>: <u>Deliver at least once.</u> This is like =
+me sending a letter that requires a signature. If they try to deliver it an=
+d nobody=E2=80=99s home, I might just send another copy, and another, and a=
+nother, and now I have multiple mail carriers all coming to your door with =
+this letter. And when you finally do answer the door, they might hand you a=
+ stack of a hundred of them. That=E2=80=99s fine, as long as I know you got=
+ at least one of them, and signed it, that=E2=80=99s all I care about. Some=
+times a system will need to perform idempotent operations where it really d=
+oesn=E2=80=99t matter if it=E2=80=99s invoked twice, as long as it=E2=80=99=
+s invoked at least once=E2=80=94that's all we care about.</span></li>
+<li class=3D"list_item" style=3D"padding:0 0 0 1em;margin:0;margin-left:1em=
+"><span><strong>QoS 2</strong>: <u>Deliver exactly once. </u>This is like I=
+=E2=80=99m sending you a package of something expensive you ordered from my=
+ store. You have to get it, and you have to confirm that you got it, but yo=
+u only ordered one, so under no circumstances should you get the package tw=
+ice. Any action in a distributed system that is mission-critical and not id=
+empotent would probably fall under this use case. That being said, deliver-=
+exactly-once has significant overhead. There=E2=80=99s a 4-way handshake in=
+volved, and just a lot of pieces that need to be synced up. But let=E2=80=
+=99s say your system is sending money from one person to another. If that n=
+eeds to happen once and only once, and the ramifications of it happening ze=
+ro times or more than 1 time are disastrous, then the overhead of QoS 2 is =
+worth it.</span></li>
+</ul>
+<p style=3D"margin:1em 0;font-family:-apple-system, BlinkMacSystemFont, san=
+s-serif;font-size:18px;color:#353535;font-weight:400;letter-spacing:0;line-=
+height:1.5;text-transform:none" class=3D"">The issue with these guarantees =
+(QoS 0,1,2) is not about what they offer, it=E2=80=99s about what they don=
+=E2=80=99t. None of these guarantees offer anything concerning timeliness. =
+The guarantees say <strong><em>what</em></strong> is going to happen, but n=
+ot <strong><em>when</em></strong> it=E2=80=99s going to happen. There=E2=80=
+=99s no way for me to say, for example: =E2=80=9CI need at-least-once deliv=
+ery within this specified time frame=E2=80=9D. Why does this matter? Well, =
+let=E2=80=99s go back to the chocolate factory. Let=E2=80=99s say the caram=
+els you=E2=80=99re dipping right now are a special order for Violet=E2=80=
+=99s birthday, tomorrow. They=E2=80=99re special caramels, they=E2=80=99ve =
+got her name stamped right into the chocolate coating. That order needs to =
+be boxed and packaged to go out by this afternoon. You=E2=80=99re loading u=
+p these cooling racks with chocolates, there=E2=80=99s no way for you to co=
+mmunicate to me that not only should I prioritize these, but there is a spe=
+cific deadline I need to hit.</p>
+<p style=3D"margin:1em 0;font-family:-apple-system, BlinkMacSystemFont, san=
+s-serif;font-size:18px;color:#353535;font-weight:400;letter-spacing:0;line-=
+height:1.5;text-transform:none" class=3D"">These lack of temporal / timelin=
+ess / =E2=80=9Cpredictable execution=E2=80=9D guarantees, the authors argue=
+, make MQTT unsuitable for industrial environments. And that should make so=
+me kind of intuitive sense. If you=E2=80=99re running a factory, you need t=
+o be able to delegate things to different priority levels and attach specif=
+ic timelines to their delivery and execution. Without that, your job is a l=
+ot harder.</p>
+<p style=3D"margin:1em 0;font-family:-apple-system, BlinkMacSystemFont, san=
+s-serif;font-size:18px;color:#353535;font-weight:400;letter-spacing:0;line-=
+height:1.5;text-transform:none" class=3D""><u>What the authors propose:</u>=
+</p>
+<p style=3D"margin:1em 0;font-family:-apple-system, BlinkMacSystemFont, san=
+s-serif;font-size:18px;color:#353535;font-weight:400;letter-spacing:0;line-=
+height:1.5;text-transform:none" class=3D"">Starting in MQTT version 5, whic=
+h was released in 2019, developers can add what=E2=80=99s called =E2=80=9Cu=
+ser properties=E2=80=9D to a message. Instead of the message having a fixed=
+ header and a payload, there=E2=80=99s a fixed header, a payload, and what=
+=E2=80=99s called a variable-payload where you can add key-value pairs of d=
+ata. So in their proposal, they=E2=80=99re adding a series of key-value pai=
+rs to the variable payload:</p>
+<ul class=3D"unordered_list" style=3D"margin:1em 0;margin-left:1em;padding:=
+0;list-style-position:outside !important;font-family:-apple-system, BlinkMa=
+cSystemFont, sans-serif;font-size:18px;color:#353535;font-weight:400;letter=
+-spacing:0;line-height:1.5;text-align:left;text-transform:none;list-style-p=
+osition:inside">
+<li class=3D"list_item" style=3D"padding:0 0 0 1em;margin:0;margin-left:1em=
+"><span><strong>Flow Index (i)</strong>: This identifies the specific data =
+flow. It helps in distinguishing multiple flows of messages in the system.<=
+/span></li>
+<li class=3D"list_item" style=3D"padding:0 0 0 1em;margin:0;margin-left:1em=
+"><span><strong>Transmission Time (Ci)</strong>: Specifies the time it take=
+s to transmit a message, including any overhead. </span></li>
+<li class=3D"list_item" style=3D"padding:0 0 0 1em;margin:0;margin-left:1em=
+"><span><strong>Priority (Pi)</strong>: Indicates the priority level of the=
+ message. </span></li>
+<li class=3D"list_item" style=3D"padding:0 0 0 1em;margin:0;margin-left:1em=
+"><span><strong>Period (Ti)</strong>: Defines the minimum inter-arrival tim=
+e or period between two successive messages published by the sender. </span=
+></li>
+<li class=3D"list_item" style=3D"padding:0 0 0 1em;margin:0;margin-left:1em=
+"><span><strong>Deadline (Di)</strong>: Specifies the maximum allowable tim=
+e for the message to be delivered. It must be less than or equal to the per=
+iod.</span></li>
+<li class=3D"list_item" style=3D"padding:0 0 0 1em;margin:0;margin-left:1em=
+"><span><strong>Bandwidth Usage (BWi)</strong>: Defines the maximum bandwid=
+th that the message can use. </span></li>
+</ul>
+<p style=3D"margin:1em 0;font-family:-apple-system, BlinkMacSystemFont, san=
+s-serif;font-size:18px;color:#353535;font-weight:400;letter-spacing:0;line-=
+height:1.5;text-transform:none" class=3D"">But all of those new key-value p=
+airs in the user properties don=E2=80=99t magically do anything by themselv=
+es, right? It=E2=80=99s like, if I drop a postcard in the mail and write on=
+ it =E2=80=9CHey USPS, deliver this by Thursday=E2=80=9D, that=E2=80=99s no=
+t going to have any effect on anything at all. Conveying my timeliness desi=
+re doesn=E2=80=99t matter if there=E2=80=99s not also the infrastructure in=
+ place to make good on my request. With USPS, that means buying the class o=
+f post that guarantees delivery at a certain date. With MQTT, we need some =
+kind of system that can look at the requests in the header and make good on=
+ them. That is where SDN comes in.</p>
+<p style=3D"margin:1em 0;font-family:-apple-system, BlinkMacSystemFont, san=
+s-serif;font-size:18px;color:#353535;font-weight:400;letter-spacing:0;line-=
+height:1.5;text-transform:none" class=3D"">Very briefly, SDN (software-defi=
+ned networking) is basically an application built into switches, routers, a=
+nd other internet infrastructure that can route packets based on logic inst=
+ead of just analog routing. We covered SDN in more detail in the episode on=
+ October 9th titled =E2=80=9CTraffic Classification in Software-Defined Net=
+working Using Genetic Programming Tools.=E2=80=9D I=E2=80=99d recommend rev=
+iewing that episode for more details. And another sidenote: This is a good =
+time to mention, as of yesterday afternoon, the episode archive is up at <a=
+ href=3D"https://click.convertkit-mail2.com/92u9qde2d0fnhq8p7o3c9hz3vmd33aw=
+/owhkhqhrmz2xwdav/aHR0cHM6Ly9qb3VybmFsY2x1Yi5pby9hcmNoaXZl" target=3D"_blan=
+k" rel=3D"noopener noreferrer" style=3D"color:#0000ff" url-id=3D"1680052264=
+">JournalClub.io/archive</a>. So if there are any episodes from the past th=
+at you missed and you want access to, like the SDN episode I just mentioned=
+, go to the archive, find the episode name, and then send me a note with th=
+e episode name so I can re-trigger the email send for you. At some point, r=
+e-sends will be fully automated, but, baby steps.</p>
+<p style=3D"margin:1em 0;font-family:-apple-system, BlinkMacSystemFont, san=
+s-serif;font-size:18px;color:#353535;font-weight:400;letter-spacing:0;line-=
+height:1.5;text-transform:none" class=3D"">Anyway, back to the story. When =
+MQTT is running, and its publishers are sending unicasts, multicasts, and b=
+roadcasts through the MQTT broker and out to the subscribers, the packets i=
+nvolved may be getting routed through SDN (if you=E2=80=99ve set up that ki=
+nd of system). So in the authors=E2=80=99 proposal, the SDN looks at the he=
+aders, sees the timeliness requests, and then performs the routing in a way=
+ that maximizes the chances of those timeliness requests being honored.</p>
+<p style=3D"margin:1em 0;font-family:-apple-system, BlinkMacSystemFont, san=
+s-serif;font-size:18px;color:#353535;font-weight:400;letter-spacing:0;line-=
+height:1.5;text-transform:none" class=3D"">And that=E2=80=99s basically it,=
+ in a nutshell. The system they defined is called RT-MQTT (Real-Time MQTT) =
+and MRT-MQTT (Multicast Real-Time MQTT), which for all intents and purposes=
+ is a superset of RT-MQTT with extra logic for those use cases.</p>
+<p style=3D"margin:1em 0;font-family:-apple-system, BlinkMacSystemFont, san=
+s-serif;font-size:18px;color:#353535;font-weight:400;letter-spacing:0;line-=
+height:1.5;text-transform:none" class=3D"">Most of the paper is spent defin=
+ing the architecture, governing logic and algorithms for how the SDNs would=
+ operate, but then the authors spend a considerable amount of time simulati=
+ng and analyzing the performance of their new system. They set up emulation=
+s in Mininet, which is a network emulator, and used the Ryu OpenFlow contro=
+ller to simulate some of the lower-level aspects of SDN. They ran the syste=
+m under low, medium, and high loads and focused their analysis on WCRT.</p>
+<p style=3D"margin:1em 0;font-family:-apple-system, BlinkMacSystemFont, san=
+s-serif;font-size:18px;color:#353535;font-weight:400;letter-spacing:0;line-=
+height:1.5;text-transform:none" class=3D"">WCRT stands for Worst-Case Respo=
+nse Time. If you=E2=80=99re familiar with Big O notation for algorithms, it=
+=E2=80=99s a lot like that, but for a distributed system, in the way that t=
+hey both represent upper bounds. In order to produce WCRT, they first calcu=
+lated HA and TA. HA (Holistic Approach) focuses on the cumulative delays ac=
+ross all nodes and switches on the path, while TA (Trajectory Approach) cal=
+culates the latest time a message could start at its final destination by w=
+orking backward through the network path. HA is more pessimistic, but TA re=
+quires more computational resources and complexity to implement. So they co=
+nsidered both. Here are the broad strokes of their results:</p>
+<ul class=3D"unordered_list" style=3D"margin:1em 0;margin-left:1em;padding:=
+0;list-style-position:outside !important;font-family:-apple-system, BlinkMa=
+cSystemFont, sans-serif;font-size:18px;color:#353535;font-weight:400;letter=
+-spacing:0;line-height:1.5;text-align:left;text-transform:none;list-style-p=
+osition:inside">
+<li class=3D"list_item" style=3D"padding:0 0 0 1em;margin:0;margin-left:1em=
+"><span><strong>MRT-MQTT outperforms MQTT</strong>: The system reduced Wors=
+t-Case Response Time (WCRT) significantly for time-sensitive traffic in mul=
+ti-edge networks.</span></li>
+<li class=3D"list_item" style=3D"padding:0 0 0 1em;margin:0;margin-left:1em=
+"><span><strong>Traffic prioritization enhances timing guarantees</strong>:=
+ Prioritized messages exhibited lower WCRT compared to lower-priority messa=
+ges, showing that the framework effectively manages different priority leve=
+ls.</span></li>
+<li class=3D"list_item" style=3D"padding:0 0 0 1em;margin:0;margin-left:1em=
+"><span><strong>Schedulability analysis validated</strong>: Both Holistic A=
+pproach (HA) and Trajectory Approach (TA) provided accurate WCRT estimates =
+that closely matched the experimentally observed results, demonstrating the=
+ reliability of the analysis methods.</span></li>
+<li class=3D"list_item" style=3D"padding:0 0 0 1em;margin:0;margin-left:1em=
+"><span><strong>Trade-off between accuracy and complexity</strong>: HA prov=
+ided faster but more pessimistic results, while TA gave tighter, more preci=
+se WCRT bounds but at the cost of increased computational complexity.</span=
+></li>
+</ul>
+<p style=3D"margin:1em 0;font-family:-apple-system, BlinkMacSystemFont, san=
+s-serif;font-size:18px;color:#353535;font-weight:400;letter-spacing:0;line-=
+height:1.5;text-transform:none" class=3D""><u>The road ahead:</u>=E2=80=8B<=
+br>=E2=80=8B<br>The results so far are promising, but the authors aren't do=
+ne yet. Over the next few years, we can expect more papers from them that w=
+ill go further and deeper on this. Future research is likely to focus on im=
+proving scalability across even larger multi-edge networks, refining the pr=
+ecision of the real-time schedulability analyses, and exploring advanced te=
+chniques for handling mixed traffic loads with minimal impact on non-real-t=
+ime data. They may also investigate integrating more robust security mechan=
+isms that don't compromise the timeliness guarantees.</p>
+<p style=3D"margin:1em 0;font-family:-apple-system, BlinkMacSystemFont, san=
+s-serif;font-size:18px;color:#353535;font-weight:400;letter-spacing:0;line-=
+height:1.5;text-transform:none" class=3D"">We=E2=80=99ll be keeping an eye =
+on them as they continue to publish. And when there=E2=80=99s a big announc=
+ement, you=E2=80=99ll hear about it here on Journal Club.</p>
+<p style=3D"margin:1em 0;font-family:-apple-system, BlinkMacSystemFont, san=
+s-serif;font-size:18px;color:#353535;font-weight:400;letter-spacing:0;line-=
+height:1.5;text-transform:none" class=3D"">If you=E2=80=99d like to view th=
+e architecture diagrams they created for this system, or the formulas that =
+govern its execution, please do download the paper. If you=E2=80=99d like t=
+o read the previous papers this team authored on this subject, they=E2=80=
+=99re listed in the reference section, as reference numbers 12-16.</p>
+<table class=3D"ck-layout-block ck-layout-stack" width=3D"100%" border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0" bgcolor=3D"#ffffff" style=3D"border-c=
+ollapse:separate;line-height:1.5;mso-table-lspace:0pt;mso-table-rspace:0pt;=
+background-color:#ffffff;padding:0px 0px 0px 0px;margin:24px 0px 24px 0px;o=
+verflow:hidden;background-size:cover;background-position:center"><tbody><tr=
+>
+<td as=3D"td" class=3D"ck-column ck-column-stack ck-column-1" width=3D"40%"=
+ style=3D"mso-table-lspace:0pt;mso-table-rspace:0pt;vertical-align:top;back=
+ground-size:cover;background-position:center;box-sizing:border-box;vertical=
+-align:top"><div style=3D"padding:0px 0px 0px 0px"><table width=3D"100%" bo=
+rder=3D"0" cellspacing=3D"0" cellpadding=3D"0" style=3D"border-collapse:sep=
+arate;line-height:1.5;mso-table-lspace:0pt;mso-table-rspace:0pt;text-align:=
+center;table-layout:fixed;float:none" class=3D"email-image"><tbody><tr><td =
+align=3D"center" style=3D"mso-table-lspace:0pt;mso-table-rspace:0pt;vertica=
+l-align:top"><figure style=3D"margin:1em 0;margin-top:0;margin-bottom:0;mar=
+gin-left:0;margin-right:0;max-width:100%;width:100%"><div style=3D"display:=
+block"><img src=3D"https://embed.filekitcdn.com/e/3Uk7tL4uX5yjQZM3sj7FA5/gy=
+Tk6Miin8sMsEFuV8waDs" alt=3D"" width=3D"100%" height=3D"auto" style=3D"bord=
+er:0 none;display:block;border:0;height:auto;line-height:100%;outline:none;=
+-webkit-text-decoration:none;text-decoration:none;-ms-interpolation-mode:bi=
+cubic;max-width:100%;width:100%;height:auto;object-fit:contain"></div></fig=
+ure></td></tr></tbody></table></div></td>
+<td style=3D"mso-table-lspace:0pt;mso-table-rspace:0pt;vertical-align:top;p=
+adding-left:30px"></td>
+<td as=3D"td" class=3D"ck-column ck-column-2" width=3D"60%" style=3D"mso-ta=
+ble-lspace:0pt;mso-table-rspace:0pt;vertical-align:top;background-size:cove=
+r;background-position:center;box-sizing:border-box;vertical-align:middle"><=
+div style=3D"padding:0px 0px 0px 0px">
+<h2 style=3D"font-weight:bold;font-style:normal;font-size:1em;margin:0;font=
+-size:1.5em;margin:1em 0;font-family:Charter, Georgia, Times New Roman, ser=
+if;font-size:32px;color:#11363F;font-weight:400;letter-spacing:0;line-heigh=
+t:1.5;text-transform:none;margin-top:0;margin-bottom:0" class=3D"">Want the=
+ paper?</h2>
+<p style=3D"margin:1em 0;font-family:-apple-system, BlinkMacSystemFont, san=
+s-serif;font-size:18px;color:#353535;font-weight:400;letter-spacing:0;line-=
+height:1.5;text-transform:none;margin-top:8px;margin-bottom:8px" class=3D""=
+>This link will take you to the original DOI for the paper (on the publishe=
+r's site). You'll be able to grab the PDF from them directly.</p>
+<!--[if !mso]>--><table width=3D"100%" style=3D"border-collapse:separate;li=
+ne-height:1.5;mso-table-lspace:0pt;mso-table-rspace:0pt"><tbody><tr><td ali=
+gn=3D"left" style=3D"mso-table-lspace:0pt;mso-table-rspace:0pt;vertical-ali=
+gn:top"><a class=3D"email-button" href=3D"https://click.convertkit-mail2.co=
+m/92u9qde2d0fnhq8p7o3c9hz3vmd33aw/z2hghnh32gq5evbp/aHR0cHM6Ly9kb2kub3JnLzEw=
+LjExMDkvT0pJRVMuMjAyNC4zMzczMjMy" target=3D"_blank" rel=3D"noopener norefer=
+rer" style=3D"border:0 none;margin-bottom:0.5em;background-color:#11363F;co=
+lor:#ffffff;border-radius:0px;font-family:-apple-system,BlinkMacSystemFont,=
+'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif;=
+border-color:#11363F;background-color:#11363F;box-sizing:border-box;border-=
+style:solid;color:#ffffff;display:inline-block;text-align:left;text-decorat=
+ion:none;padding:12px 20px;margin-top:8px;margin-bottom:8px;font-size:16px"=
+ url-id=3D"1680052265">Download Now</a></td></tr></tbody></table>
+<!--<![endif]--><!--[if mso]><table class=3D"button-table" width=3D"100%" b=
+order=3D"0" cellSpacing=3D"0" cellPadding=3D"0" style=3D"margin-top:8px;mar=
+gin-bottom:8px"><tr><td align=3D"left"><table border=3D"0" cellSpacing=3D"0=
+" cellPadding=3D"0"><tr><td align=3D"center" bgcolor=3D"#11363F" style=3D"b=
+ackground-color:#11363F;overflow:hidden;padding:12px 20px"><a class=3D"emai=
+l-button" href=3D"https://doi.org/10.1109/OJIES.2024.3373232" target=3D"_bl=
+ank" rel=3D"noopener noreferrer" style=3D"background-color:inherit;display:=
+inline-block;text-decoration:none;border-style:solid;margin:0;color:#ffffff=
+;font-size:16px" data-ck-element=3D"button">Download Now</a></td></tr></tab=
+le></td></tr></table><![endif]-->
+</div></td>
+</tr></tbody></table>
+<p style=3D"margin:1em 0;font-family:-apple-system, BlinkMacSystemFont, san=
+s-serif;font-size:18px;color:#353535;font-weight:400;letter-spacing:0;line-=
+height:1.5;text-transform:none" class=3D"">=E2=80=8B<br>I hope you enjoyed =
+this episode of Journal Club. <br>=E2=80=8B<br>See you tomorrow!<br>=E2=80=
+=8B<br>Malcolm Diggs</p>
+</div></div></td>
+<td contenteditable=3D"false" style=3D"mso-table-lspace:0pt;mso-table-rspac=
+e:0pt;vertical-align:top"></td>
+</tr></tbody></table></center></div>
+<div class=3D"ck-section ck-hide-in-public-posts" style=3D"margin:30px auto=
+ 0px auto"><center><table cellpadding=3D"0" cellspacing=3D"0" style=3D"bord=
+er-collapse:separate;line-height:1.5;mso-table-lspace:0pt;mso-table-rspace:=
+0pt;width:100%;margin:0 auto;max-width:640px"><tbody><tr>
+<td contenteditable=3D"false" style=3D"mso-table-lspace:0pt;mso-table-rspac=
+e:0pt;vertical-align:top"></td>
+<td width=3D"640" style=3D"mso-table-lspace:0pt;mso-table-rspace:0pt;vertic=
+al-align:top;background-color:#ffffff;background-size:cover;background-posi=
+tion:center;box-sizing:border-box;mso-padding-alt:36px 36px 36px 36px" bgco=
+lor=3D"#ffffff"><div class=3D"ck-inner-section ck-padding-left-mobile-frien=
+dly ck-padding-right-mobile-friendly" style=3D"padding:36px 36px 36px 36px"=
+><div style=3D"margin-left:auto;margin-right:auto;max-width:640px"><p style=
+=3D"margin:1em 0;font-family:-apple-system, BlinkMacSystemFont, sans-serif;=
+font-size:18px;color:#656565;font-weight:400;letter-spacing:0;line-height:1=
+.5;text-align:left;text-transform:none" class=3D"">113 Cherry St #92768, Se=
+attle, WA 98104-2205<br>=E2=80=8B<a href=3D"https://unsubscribe.convertkit-=
+mail2.com/92u9qde2d0fnhq8p7o3c9hz3vmd33aw" target=3D"_blank" rel=3D"noopene=
+r noreferrer" style=3D"color:#656565">Unsubscribe</a> =C2=B7 <a href=3D"htt=
+ps://preferences.convertkit-mail2.com/92u9qde2d0fnhq8p7o3c9hz3vmd33aw" targ=
+et=3D"_blank" rel=3D"noopener noreferrer" style=3D"color:#656565">Preferenc=
+es</a>=E2=80=8B</p></div></div></td>
+<td contenteditable=3D"false" style=3D"mso-table-lspace:0pt;mso-table-rspac=
+e:0pt;vertical-align:top"></td>
+</tr></tbody></table></center></div>
+</td></tr></tbody></table>
+</div></td>
+<td style=3D"mso-table-lspace:0pt;mso-table-rspace:0pt;vertical-align:top">=
+</td>
+</tr></tbody></table></div>
+<!-- -->
+<img src=3D"https://open.convertkit-mail2.com/92u9qde2d0fnhq8p7o3c9hz3vmd33=
+aw" alt=3D"" style=3D"border:0 none;display:block;border:0;height:auto;line=
+-height:100%;outline:none;-webkit-text-decoration:none;text-decoration:none=
+;-ms-interpolation-mode:bicubic;max-width:100%">
+</body>
+</html>
+
+--a9c4115d1397ada69dbc577ff6b0c6a8d20c0ff1f0ebd9d3a8f3bf6054ec--

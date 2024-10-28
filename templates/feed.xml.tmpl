@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+  xmlns:atom="http://www.w3.org/2005/Atom"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
+  xmlns:podcast="https://podcastindex.org/namespace/1.0" >
+  <channel>
+    <title>Journal Club</title>
+    <link>https://journalclub.io/</link>
+    <atom:link href="https://connor.zip/journalclub/feed.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <copyright>&#169; 2024 JournalClub.io</copyright>
+    <itunes:author>Journal Club</itunes:author>
+    <description> Journal Club is a premium daily newsletter and podcast authored and hosted by Malcolm Diggs. Each episode is lovingly crafted by hand, and delivered to your inbox every morning in text and audio form.</description>
+    <itunes:image href="https://www.journalclub.io/cdn-cgi/image/width=1000/images/journals/journal-splash.png"/>
+    <itunes:category text="Science" />
+    <itunes:explicit>false</itunes:explicit>
+    {{- range . }}
+    <item>
+        <title>{{.Subject}}</title>
+        <description>{{.Description}}</description>
+        <guid isPermaLink="false">{{.UUID}}</guid>
+        <pubDate>{{ rfc2822 .Date }}</pubDate>
+        <enclosure
+            url="{{.AudioURL}}"
+            length="{{.AudioSize}}"
+            type="audio/mpeg"
+            />
+        <itunes:image href="{{.ImageURL}}" />
+        <itunes:explicit>false</itunes:explicit>
+    </item>
+    {{- end }}
+  </channel>
+</rss>
