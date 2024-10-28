@@ -18,7 +18,14 @@
     {{- range . }}
     <item>
         <title>{{.Subject}}</title>
-        <description><![CDATA[{{.Description}}]]></description>
+        <description>
+          <![CDATA[
+          <p>{{- .Description -}}</p>
+          {{- if .PaperURL -}}
+            <p>Want the paper? This <a href="{{.PaperURL}}">link</a> will take you to the original DOI for the paper (on the publisher's site). You'll be able to grab the PDF from them directly.</p>
+          {{- end -}}
+          ]]>
+        </description>
         <guid isPermaLink="false">{{.UUID}}</guid>
         <pubDate>{{ rfc2822 .Date }}</pubDate>
         <enclosure

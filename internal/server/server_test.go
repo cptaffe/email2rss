@@ -12,6 +12,7 @@ import (
 
 	_ "embed"
 
+	"github.com/cptaffe/email2rss/internal/journalclub"
 	"gocloud.dev/blob"
 	_ "gocloud.dev/blob/memblob"
 )
@@ -44,7 +45,7 @@ func TestAddEmail(t *testing.T) {
 		t.Errorf("status is %d, expected 201", rec.Code)
 	}
 
-	var resp email
+	var resp journalclub.Message
 	err = json.NewDecoder(rec.Body).Decode(&resp)
 	if err != nil {
 		t.Errorf("deserialize body into email: %v", err)
@@ -55,7 +56,7 @@ func TestAddEmail(t *testing.T) {
 	if err != nil {
 		t.Errorf("parse date: %v", err)
 	}
-	expected := email{
+	expected := journalclub.Message{
 		UUID:        "4489904c-91ae-4fbf-b4e7-915007267da1",
 		Subject:     "A Scalable Real-Time SDN-Based MQTT Framework for Industrial Applications",
 		Description: "Today's article comes from the IEEE Open Journal of the Industrial Electronics Society. The authors are Shahri et al., from the University of Aveiro, in Portugal. In this paper they argue that the MQTT protocol is not suitable for industrial applications because it lacks timeliness guarantees. They propose a new system to overcome these limitations. Let's see what they came up with.",
@@ -74,7 +75,7 @@ func TestAddEmail(t *testing.T) {
 	if err != nil {
 		t.Fatalf("failed to read from bucket: %v", err)
 	}
-	var stored email
+	var stored journalclub.Message
 	err = json.NewDecoder(itemReader).Decode(&stored)
 	if err != nil {
 		t.Errorf("deserialize body into email: %v", err)

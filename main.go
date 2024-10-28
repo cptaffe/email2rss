@@ -9,7 +9,7 @@ import (
 	"os/signal"
 	"syscall"
 
-	"github.com/cptaffe/email2rss/server"
+	"github.com/cptaffe/email2rss/internal/server"
 	"gocloud.dev/blob"
 	_ "gocloud.dev/blob/gcsblob"
 )

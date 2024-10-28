@@ -6,7 +6,7 @@ WORKDIR /usr/src/email2rss
 COPY go.mod go.sum ./
 RUN go mod download && go mod verify
 
-COPY server ./server
+COPY internal ./internal
 COPY main.go main.go
 RUN go build -v -o /usr/local/bin/email2rss .
 
