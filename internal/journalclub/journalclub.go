@@ -18,7 +18,7 @@ var (
 	audioRegexp       = regexp.MustCompile(`"(https?://[^ ]+\.mp3)"`)
 	imageRegexp       = regexp.MustCompile(`<img src="(https?://[^ ]*)"`)
 	descriptionRegexp = regexp.MustCompile(`Hi[ ]+Connor, (.*)</p>`)
-	paperRegexp       = regexp.MustCompile(`<a [^>]*href="(https?://doi.org[^ ]*)"[^>]*>`)
+	paperRegexp       = regexp.MustCompile(`<a [^>]*href="(https?://(\w+\.)?doi.org[^"]*)"[^>]*>`)
 )
 
 type Message struct {
