@@ -47,18 +47,20 @@ func NewServer(templatePath string, bucket *blob.Bucket) (*Server, error) {
 
 func (s *Server) GetFeed(w http.ResponseWriter, req *http.Request) {
 	ctx := req.Context()
-	blobReader, err := s.bucket.NewReader(ctx, fmt.Sprintf("%s/feed.xml", req.PathValue("feed")), nil)
+	key := fmt.Sprintf("%s/feed.xml", req.PathValue("feed"))
+	attrs, err := s.bucket.Attributes(ctx, key)
+	blobReader, err := s.bucket.NewReader(ctx, key, nil)
 	if err != nil {
-		if err != nil {
-			http.Error(w, "Could not access feed", http.StatusInternalServerError)
-			log.Printf("construct object reader: %v", err)
-			return
-		}
+		http.Error(w, "Could not access feed", http.StatusInternalServerError)
+		log.Printf("construct object reader: %v", err)
+		return
 	}
 	defer blobReader.Close()
 
 	w.Header().Add("Content-Type", "application/xml+rss;charset=UTF-8")
+	w.Header().Add("Content-Disposition", "inline")
 	w.Header().Add("Cache-Control", "no-cache")
+	w.Header().Add("ETag", attrs.ETag)
 	http.ServeContent(w, req, "", blobReader.ModTime(), blobReader)
 }
 
@@ -140,7 +142,7 @@ func (s *Server) writeItem(ctx context.Context, feed string, item *journalclub.M
 	key := fmt.Sprintf("%s/items/%s.json", feed, item.Date.Format(time.RFC3339))
 
 	// Write an item file
-	itemWriter, err := s.bucket.NewWriter(ctx, key, nil)
+	itemWriter, err := s.bucket.NewWriter(ctx, key, &blob.WriterOptions{ContentType: "application/xml+rss;charset=UTF-8"})
 	if err != nil {
 		return fmt.Errorf("new object writer: %w", err)
 	}
