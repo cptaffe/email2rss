@@ -49,6 +49,11 @@ func (s *Server) GetFeed(w http.ResponseWriter, req *http.Request) {
 	ctx := req.Context()
 	key := fmt.Sprintf("%s/feed.xml", req.PathValue("feed"))
 	attrs, err := s.bucket.Attributes(ctx, key)
+	if err != nil {
+		http.Error(w, "Could not fetch feed attributes", http.StatusInternalServerError)
+		log.Printf("fetch object attributes: %v", err)
+		return
+	}
 	blobReader, err := s.bucket.NewReader(ctx, key, nil)
 	if err != nil {
 		http.Error(w, "Could not access feed", http.StatusInternalServerError)
