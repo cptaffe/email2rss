@@ -10,10 +10,6 @@ import (
 	"github.com/cptaffe/email2rss/internal/journalclub"
 )
 
-var (
-	contentType = flag.String("mime", "text/html", "MIME type to extract from an email input")
-)
-
 func main() {
 	flag.Parse()
 	msg, err := mail.ReadMessage(os.Stdin)
@@ -21,7 +17,8 @@ func main() {
 		log.Fatalf("parse message: %v", err)
 	}
 
-	jc, err := journalclub.FromMessage(msg)
+	back := &journalclub.Backend{}
+	jc, err := back.FromMessage(msg)
 	if err != nil {
 		log.Fatalf("construct journalclub message: %v", err)
 	}

@@ -28,7 +28,7 @@ func TestAddEmail(t *testing.T) {
 	}
 	defer bucket.Close()
 
-	s, err := NewServer("../templates", bucket)
+	s, err := NewServer("../../templates", bucket)
 	if err != nil {
 		t.Fatalf("construct server: %v", err)
 	}
@@ -64,6 +64,7 @@ func TestAddEmail(t *testing.T) {
 		ImageURL:    "https://embed.filekitcdn.com/e/3Uk7tL4uX5yjQZM3sj7FA5/gyTk6Miin8sMsEFuV8waDs",
 		AudioURL:    "https://s3.amazonaws.com/journalclub.io/mqtt-full.mp3",
 		AudioSize:   18218972,
+		PaperURL:    "https://doi.org/10.1109/OJIES.2024.3373232",
 	}
 
 	if resp != expected {

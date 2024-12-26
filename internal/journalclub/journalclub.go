@@ -1,6 +1,7 @@
 package journalclub
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 	"mime"
@@ -11,14 +12,17 @@ import (
 	"strings"
 	"time"
 
+	"github.com/cptaffe/email2rss/internal/backend"
 	"github.com/cptaffe/email2rss/internal/email"
 )
 
 var (
-	audioRegexp       = regexp.MustCompile(`"(https?://[^ ]+\.mp3)"`)
-	imageRegexp       = regexp.MustCompile(`<img src="(https?://[^ ]*)"`)
-	descriptionRegexp = regexp.MustCompile(`Hi[ ]+Connor, (.*)</p>`)
-	paperRegexp       = regexp.MustCompile(`<a [^>]*href="(https?://(\w+\.)?doi.org[^"]*)"[^>]*>`)
+	audioRegexp                       = regexp.MustCompile(`"(https?://[^ ]+\.mp3)"`)
+	imageRegexp                       = regexp.MustCompile(`<img src="(https?://[^ ]*)"`)
+	descriptionRegexp                 = regexp.MustCompile(`Hi[ ]+Connor, (.*)</p>`)
+	paperRegexp                       = regexp.MustCompile(`<a [^>]*href="(https?://(\w+\.)?doi.org[^"]*)"[^>]*>`)
+	_                 backend.Item    = &Message{}
+	_                 backend.Backend = &Backend{}
 )
 
 type Message struct {
@@ -32,7 +36,25 @@ type Message struct {
 	PaperURL    string    `json:"paperURL"`
 }
 
-func FromMessage(msg *mail.Message) (*Message, error) {
+func (msg *Message) Key() string {
+	return msg.Date.Format(time.RFC3339)
+}
+
+func (msg *Message) Encode(w io.Writer) error {
+	return json.NewEncoder(w).Encode(msg)
+}
+
+type Backend struct{}
+
+func (b *Backend) Name() string {
+	return "journalclub"
+}
+
+func (b *Backend) TemplatePath() string {
+	return "journalclub.xml.tmpl"
+}
+
+func (b *Backend) FromMessage(msg *mail.Message) (backend.Item, error) {
 	date, err := msg.Header.Date()
 	if err != nil {
 		return nil, fmt.Errorf("retrieve date header: %w", err)
@@ -98,4 +120,13 @@ func FromMessage(msg *mail.Message) (*Message, error) {
 		AudioSize:   audioSize,
 		PaperURL:    paperURL,
 	}, nil
+}
+
+func (b *Backend) Decode(r io.Reader) (backend.Item, error) {
+	var item Message
+	err := json.NewDecoder(r).Decode(&item)
+	if err != nil {
+		return nil, fmt.Errorf("parse item from JSON file: %w", err)
+	}
+	return &item, nil
 }

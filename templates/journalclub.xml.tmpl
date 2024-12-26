@@ -15,9 +15,10 @@
     <itunes:image href="https://www.journalclub.io/cdn-cgi/image/width=1000/images/journals/journal-splash.png"/>
     <itunes:category text="Science" />
     <itunes:explicit>false</itunes:explicit>
-    {{- range . }}
+    {{- range .Items }}
     <item>
         <title>{{.Subject}}</title>
+        <link>https://connor.zip/email2rss/journalclub/items/{{ .Key }}</link>
         <description>
           <![CDATA[
           <p>{{- .Description -}}</p>

@@ -28,6 +28,13 @@ spec:
         pathType: Prefix
       - backend:
           service:
+            name: email2rss
+            port:
+              name: web
+        path: /email2rss/
+        pathType: Prefix
+      - backend:
+          service:
             name: blog
             port:
               name: web
