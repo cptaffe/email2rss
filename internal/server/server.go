@@ -139,6 +139,10 @@ func (s *Server) GetItem(w http.ResponseWriter, req *http.Request) {
 	}
 }
 
+type AddEmailResponse struct {
+	ID string `json:"id"`
+}
+
 func (s *Server) AddEmail(w http.ResponseWriter, req *http.Request) {
 	ctx := req.Context()
 	feed := req.PathValue("feed")
@@ -199,7 +203,7 @@ func (s *Server) AddEmail(w http.ResponseWriter, req *http.Request) {
 
 	// Return parsed email representation
 	w.WriteHeader(http.StatusCreated)
-	err = json.NewEncoder(w).Encode(item)
+	err = json.NewEncoder(w).Encode(&AddEmailResponse{ID: item.Key()})
 	if err != nil {
 		http.Error(w, "Could not serialize email as JSON", http.StatusBadRequest)
 		log.Printf("encode email as json: %v", err)
