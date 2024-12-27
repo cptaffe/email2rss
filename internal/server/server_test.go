@@ -12,6 +12,7 @@ import (
 
 	_ "embed"
 
+	"github.com/cptaffe/email2rss/internal/generic"
 	"github.com/cptaffe/email2rss/internal/journalclub"
 	"gocloud.dev/blob"
 	_ "gocloud.dev/blob/memblob"
@@ -20,7 +21,10 @@ import (
 //go:embed test/email.rfc822
 var testEmail string
 
-func TestAddEmail(t *testing.T) {
+//go:embed test/email.html
+var testHTML string
+
+func TestAddJournalClubEmail(t *testing.T) {
 	ctx := context.Background()
 	bucket, err := blob.OpenBucket(ctx, "mem://")
 	if err != nil {
@@ -92,5 +96,76 @@ func TestAddEmail(t *testing.T) {
 	}
 	if !ok {
 		t.Error("Expected a new journalclub/feed.xml file")
+	}
+}
+
+func TestAddEmail(t *testing.T) {
+	ctx := context.Background()
+	bucket, err := blob.OpenBucket(ctx, "mem://")
+	if err != nil {
+		t.Fatalf("open bucket: %v", err)
+	}
+	defer bucket.Close()
+
+	s, err := NewServer("../../templates", bucket)
+	if err != nil {
+		t.Fatalf("construct server: %v", err)
+	}
+
+	rec := httptest.NewRecorder()
+	req, err := http.NewRequest(http.MethodPost, "email2rss/test/email", strings.NewReader(testEmail))
+	if err != nil {
+		t.Fatalf("construct request: %v", err)
+	}
+	req.SetPathValue("feed", "test")
+	s.AddEmail(rec, req)
+
+	if rec.Code != http.StatusCreated {
+		t.Errorf("status is %d, expected 201", rec.Code)
+	}
+
+	var resp generic.Message
+	err = json.NewDecoder(rec.Body).Decode(&resp)
+	if err != nil {
+		t.Errorf("deserialize body into email: %v", err)
+	}
+
+	timestamp := "2024-10-21T12:45:12Z"
+	expectedDate, err := time.Parse(time.RFC3339, timestamp)
+	if err != nil {
+		t.Errorf("parse date: %v", err)
+	}
+	expected := generic.Message{
+		UUID:    "4489904c-91ae-4fbf-b4e7-915007267da1",
+		Subject: "A Scalable Real-Time SDN-Based MQTT Framework for Industrial Applications",
+		Date:    expectedDate,
+		Body:    testHTML,
+	}
+
+	if resp != expected {
+		t.Errorf("response does not match expected value:\nhave:    %v\nexpected:%v", resp, expected)
+	}
+
+	key := fmt.Sprintf("test/items/%s.json", timestamp)
+	itemReader, err := bucket.NewReader(ctx, key, nil)
+	if err != nil {
+		t.Fatalf("failed to read from bucket: %v", err)
+	}
+	var stored generic.Message
+	err = json.NewDecoder(itemReader).Decode(&stored)
+	if err != nil {
+		t.Errorf("deserialize body into email: %v", err)
+	}
+
+	if resp != expected {
+		t.Errorf("stored does not match expected value:\nhave:    %v\nexpected:%v", resp, expected)
+	}
+
+	ok, err := bucket.Exists(ctx, "test/feed.xml")
+	if err != nil {
+		t.Fatalf("failed to read from bucket: %v", err)
+	}
+	if !ok {
+		t.Error("Expected a new test/feed.xml file")
 	}
 }
