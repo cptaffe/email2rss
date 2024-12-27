@@ -11,6 +11,7 @@ import (
 	"net/http"
 	"net/mail"
 	"path"
+	"strings"
 	"text/template"
 	"time"
 
@@ -92,6 +93,14 @@ func (s *Server) GetFeed(w http.ResponseWriter, req *http.Request) {
 // TODO: serve an item-specific HTML page, possibly the original email or extracted HTML
 func (s *Server) GetItem(w http.ResponseWriter, req *http.Request) {
 	ctx := req.Context()
+	feed := req.PathValue("feed")
+	back, err := s.Backend(feed)
+	if err != nil {
+		http.Error(w, "Could not load backend for feed", http.StatusBadRequest)
+		log.Printf("load backend for feed %s: %v", feed, err)
+		return
+	}
+
 	key := fmt.Sprintf("%s/items/%s.json", req.PathValue("feed"), req.PathValue("key"))
 	attrs, err := s.bucket.Attributes(ctx, key)
 	if err != nil {
@@ -107,11 +116,27 @@ func (s *Server) GetItem(w http.ResponseWriter, req *http.Request) {
 	}
 	defer blobReader.Close()
 
-	w.Header().Add("Content-Type", "application/json;charset=UTF-8")
-	w.Header().Add("Content-Disposition", "inline")
-	w.Header().Add("Cache-Control", "no-cache")
-	w.Header().Add("ETag", attrs.ETag)
-	http.ServeContent(w, req, "item.html", blobReader.ModTime(), blobReader)
+	item, err := back.Decode(blobReader)
+	if err != nil {
+		http.Error(w, "Could not parse item", http.StatusInternalServerError)
+		log.Printf("parse item from file: %v", err)
+		return
+	}
+
+	switch i := item.(type) {
+	case *generic.Message:
+		w.Header().Add("Content-Type", "text/html;charset=UTF-8")
+		w.Header().Add("Content-Disposition", "inline")
+		w.Header().Add("Cache-Control", "no-cache")
+		w.Header().Add("ETag", attrs.ETag)
+		http.ServeContent(w, req, "item.html", blobReader.ModTime(), strings.NewReader(i.Body))
+	default:
+		w.Header().Add("Content-Type", "application/json;charset=UTF-8")
+		w.Header().Add("Content-Disposition", "inline")
+		w.Header().Add("Cache-Control", "no-cache")
+		w.Header().Add("ETag", attrs.ETag)
+		http.ServeContent(w, req, "item.html", blobReader.ModTime(), blobReader)
+	}
 }
 
 func (s *Server) AddEmail(w http.ResponseWriter, req *http.Request) {

@@ -9,14 +9,13 @@
   <channel>
     <atom:link href="https://connor.zip/emails2rss/feeds/{{ $backend.Name }}" rel="self" type="application/rss+xml" />
     <title>{{ $backend.Name }}</title>
-    <link>https://connor.zip/posts/2024-11-03-email2podcast</link>
+    <link>https://connor.zip</link>
     <language>en-us</language>
     <description>A series of emails presented as a feed</description>
     {{- range .Items }}
     <item>
         <title>{{.Subject}}</title>
         <link>https://connor.zip/email2rss/{{ $backend.Name }}/items/{{ .Key }}</link>
-        <content:encoded>{{ escape .Body }}</content:encoded>
         <pubDate>{{ rfc2822 .Date }}</pubDate>
         <guid isPermaLink="false">{{.UUID}}</guid>
     </item>
