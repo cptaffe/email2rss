@@ -194,12 +194,6 @@ func (s *Server) AddEmail(w http.ResponseWriter, req *http.Request) {
 		log.Printf("write item to object store: %v", err)
 		return
 	}
-	err = s.refreshFeed(ctx, back)
-	if err != nil {
-		http.Error(w, "Could not refresh feed", http.StatusBadRequest)
-		log.Printf("refresh feed: %v", err)
-		return
-	}
 
 	// Return parsed email representation
 	w.WriteHeader(http.StatusCreated)
