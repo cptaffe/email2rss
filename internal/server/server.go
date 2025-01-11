@@ -7,6 +7,7 @@ import (
 	"encoding/xml"
 	"fmt"
 	"io"
+	"iter"
 	"log"
 	"net/http"
 	"net/mail"
@@ -26,13 +27,14 @@ const (
 )
 
 type Server struct {
-	template *template.Template
-	bucket   *blob.Bucket
-	backends map[string]backend.Backend
+	template  *template.Template
+	bucket    *blob.Bucket
+	backends  map[string]backend.Backend
+	refreshes chan string
 }
 
 // TODO: Abstract the implementation of email -> item state and item states -> feed
-func NewServer(templatePath string, bucket *blob.Bucket) (*Server, error) {
+func NewServer(ctx context.Context, templatePath string, bucket *blob.Bucket) (*Server, error) {
 	xt := template.New("text").Funcs(template.FuncMap{
 		"escape": func(html string) (string, error) {
 			var b bytes.Buffer
@@ -53,9 +55,11 @@ func NewServer(templatePath string, bucket *blob.Bucket) (*Server, error) {
 	if err != nil {
 		return nil, fmt.Errorf("parse template at `%s`: %w", templatePath, err)
 	}
-	return &Server{template: xt, bucket: bucket, backends: map[string]backend.Backend{
+	s := &Server{template: xt, bucket: bucket, backends: map[string]backend.Backend{
 		"journalclub": &journalclub.Backend{},
-	}}, nil
+	}}
+	go s.Refresher(ctx)
+	return s, nil
 }
 
 func (s *Server) Backend(feed string) (backend.Backend, error) {
@@ -194,14 +198,82 @@ func (s *Server) AddEmail(w http.ResponseWriter, req *http.Request) {
 		log.Printf("write item to object store: %v", err)
 		return
 	}
+	s.refreshes <- feed
 
-	// Return parsed email representation
 	w.WriteHeader(http.StatusCreated)
 	err = json.NewEncoder(w).Encode(&AddEmailResponse{ID: item.Key()})
 	if err != nil {
 		http.Error(w, "Could not serialize email as JSON", http.StatusBadRequest)
 		log.Printf("encode email as json: %v", err)
 		return
+	}
+}
+
+type Set[T comparable] struct {
+	items map[T]struct{}
+}
+
+func NewSet[T comparable]() Set[T] {
+	return Set[T]{items: map[T]struct{}{}}
+}
+
+func (s Set[T]) Add(item T) {
+	s.items[item] = struct{}{}
+}
+
+func (s Set[T]) AddSeq(seq iter.Seq[T]) {
+	for item := range seq {
+		s.items[item] = struct{}{}
+	}
+}
+
+func (s Set[T]) Contains(item T) bool {
+	_, ok := s.items[item]
+	return ok
+}
+
+func (s Set[T]) Items() iter.Seq[T] {
+	return func(yield func(T) bool) {
+		for k, _ := range s.items {
+			if !yield(k) {
+				return
+			}
+		}
+	}
+}
+
+func (s *Server) Refresher(ctx context.Context) {
+	for {
+		// Deduplicate refresh requests over a five minute period,
+		// this loop must run constantly to avoid blocking AddEmail requests
+		refreshes := NewSet[string]()
+		timer := time.After(5 * time.Minute)
+	L:
+		for {
+			select {
+			case feed := <-s.refreshes:
+				refreshes.Add(feed)
+			case <-ctx.Done():
+				return
+			case <-timer:
+				break L
+			}
+		}
+
+		// Asynchronously refresh each feed
+		// TODO: don't run a new refresh job until the current one is complete
+		for feed := range refreshes.Items() {
+			go func() {
+				back, err := s.Backend(feed)
+				if err != nil {
+					log.Printf("load backend for feed %s: %v", feed, err)
+				}
+				err = s.refreshFeed(ctx, back)
+				if err != nil {
+					log.Printf("refresh feed: %v", err)
+				}
+			}()
+		}
 	}
 }
 

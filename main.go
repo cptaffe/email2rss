@@ -30,7 +30,7 @@ func main() {
 	}
 	defer bucket.Close()
 
-	s, err := server.NewServer(*templatePath, bucket)
+	s, err := server.NewServer(ctx, *templatePath, bucket)
 	if err != nil {
 		log.Fatalf("init server: %v", err)
 	}
